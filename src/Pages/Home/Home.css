@@ -1,0 +1,66 @@
+.carousel-caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  position: absolute;
+}
+.carousel-indicators li {
+  height: 8px !important;
+  width: 40px !important;
+  border-radius: 12px !important;
+}
+
+.home__bonusCard,
+.home__catering {
+  background-image: url("../../img/home/bonus-cart-bg.jpg");
+  background-position: center;
+  background-size: 150%;
+}
+
+.home__catering,
+.home__loyalty,
+.home__story,
+.home__goldbelly {
+  background-image: url("../../img/home/loyalty-bg.jpg");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home__catering {
+  background-image: url("../../img/home/catering-bg.jpg");
+  background-size: 120%;
+}
+.home__sauces,
+.home__loyalty,
+.home__story,
+.home__goldbelly {
+  height: 80vh;
+}
+
+.home__story {
+  background-image: none;
+}
+
+.home__beginings {
+  background-image: url("../../img/home/ourBeginings-bg.jpg");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.home__beginingsContent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.home__beginingsContent > p {
+  color: #fff;
+  width: 40%;
+}
+
+.home__goldbelly {
+  background-image: url("../../img/home/goldbelly-bg.jpg");
+}
