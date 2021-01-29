@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./Pages/Home/Home";
 import Catering from "./Pages/Catering/Catering";
 import GiftCard from "./Pages/GiftCard/GiftCard";
+import Loyalty from './Pages/Loyalty/Loyalty'
 
 import "./App.css";
 
@@ -25,6 +26,10 @@ function App() {
 
           <Route path="/gift-cards">
             <GiftCard />
+          </Route>
+
+          <Route path="/loyalty">
+            <Loyalty />
           </Route>
         </Switch>
         <Footer />
