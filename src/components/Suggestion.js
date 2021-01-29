@@ -14,7 +14,7 @@ function Suggestion({ header, label, link }) {
     <div className="suggestion">
       <Parallax bgImage={suggestions_bg} strength={250}>
         <Container padding="100px">
-          <Header fontSize="5em" letterSpacing="9px">
+          <Header smallLetter fontSize="5em" letterSpacing="9px">
             {header}
           </Header>
           <Link to={link}>

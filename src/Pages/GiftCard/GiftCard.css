@@ -1,0 +1,11 @@
+.gift-card__info {
+    text-align: center;
+    padding-left: 250px;
+    padding-right: 250px;
+    font-family: Verlag;
+    font-size: 1.3em;
+}
+
+.gift-card__giftOptions {
+    display: flex;
+}

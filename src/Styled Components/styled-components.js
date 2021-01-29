@@ -26,8 +26,7 @@ const Info = styled.p`
   margin-top: ${(props) => props.marginTop || "25px"};
   margin-bottom: ${(props) => props.marginBottom || "25px"};
   letter-spacing: ${(props) => props.letterSpacing || "5px"};
-  padding-left: ${(props) => props.paddingLeft || "0px"};
-  padding-right: ${(props) => props.paddingRight || "0px"};
+  padding: ${(props) => props.padding || ""};
 `;
 
 const Alink = styled.a`

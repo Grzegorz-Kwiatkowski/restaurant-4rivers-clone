@@ -336,6 +336,7 @@ function Catering() {
             address={item.address}
             city={item.city}
             image={item.image}
+            btnLabel="Order online"
           />
         ))}
       </div>

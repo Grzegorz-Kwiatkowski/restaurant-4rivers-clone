@@ -7,7 +7,7 @@ import {
   Container,
 } from "../Styled Components/styled-components";
 
-function Location({ id, name, address, city, image }) {
+function Location({ id, name, address, city, image,info,btnLabel }) {
   return (
     <div className="location" style={{ backgroundImage: "url(" + image + ")" }}>
       <div className="location__backgroundRed"></div>
@@ -21,9 +21,10 @@ function Location({ id, name, address, city, image }) {
           <Info fontSize="1em" marginTop="5px">
             {city}
           </Info>
+          <Info smallLetter fontSize=".8em">{info}</Info> 
         </div>
 
-        <Button marginTop="25px">Order online</Button>
+        <Button marginTop="25px">{btnLabel}</Button>
       </Container>
     </div>
   );
