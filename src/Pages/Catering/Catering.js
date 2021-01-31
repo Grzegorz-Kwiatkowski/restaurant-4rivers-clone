@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Parallax } from "react-parallax";
-import { Link } from "react-router-dom";
+import {
+  Link, Route, Switch, useParams,
+  useRouteMatch
+} from "react-router-dom";
 import { faYahoo } from "@fortawesome/free-brands-svg-icons";
+
 
 import "./Catering.css";
 import {
@@ -13,6 +17,7 @@ import {
 } from "../../Styled Components/styled-components";
 import Location from "../../components/Location";
 import Suggestion from "../../components/Suggestion";
+import Wedding from '../../Pages/Catering/Wedding'
 
 import parallax_catering_bg from "../../img/catering/parallax-catering-bg.jpeg";
 import team_members from "../../img/catering/team-members.jpeg";
@@ -127,6 +132,7 @@ function Catering() {
     },
   ]);
 
+
   return (
     <div className="catering">
       <Parallax bgImage={parallax_catering_bg} strength={250}>
@@ -187,6 +193,7 @@ function Catering() {
         </Link>
       </Container>
 
+
       <Container>
         <Image src={team_members} width="100%" height="100%" />
 
@@ -207,7 +214,8 @@ function Catering() {
             From{" "}
             <Link to="/catering/wedding-catering" className="link">
               weddings
-            </Link>{" "}
+            </Link>
+            {" "}
             , receptions, and graduation parties to corporate events, school
             functions, and sporting events,{" "}
             <Link tp="/catering/full-service" className="link">
@@ -346,6 +354,8 @@ function Catering() {
         label="Find a location"
         link="/locations"
       />
+
+
     </div>
   );
 }
