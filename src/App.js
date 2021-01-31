@@ -8,6 +8,8 @@ import Catering from "./Pages/Catering/Catering";
 import GiftCard from "./Pages/GiftCard/GiftCard";
 import Loyalty from './Pages/Loyalty/Loyalty'
 import SpecialtyCakes from "./Pages/SpecialtyCakes/SpecialtyCakes";
+import FullService from './Pages/Catering/FullService'
+
 import "./App.css";
 
 
@@ -28,6 +30,10 @@ function App() {
             <Catering />
           </Route>
 
+          <Route path="/full-service">
+            <FullService />
+          </Route>
+
           <Route path="/gift-cards">
             <GiftCard />
           </Route>
@@ -39,6 +45,8 @@ function App() {
           <Route path="/4r-specialty-cakes">
             <SpecialtyCakes />
           </Route>
+
+
         </Switch>
         <Footer />
       </div>

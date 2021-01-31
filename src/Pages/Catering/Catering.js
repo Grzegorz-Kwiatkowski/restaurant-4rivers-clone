@@ -172,7 +172,7 @@ function Catering() {
           Need quick pick-up, large delivery, or full-service catering? 4 Rivers
           Smokehouse offers the best <br /> catering services for any occasion
           from{" "}
-          <Link className="link" to="/catering/wedding-catering">
+          <Link to="/catering/wedding-catering" className="link">
             weddings
           </Link>
           , parties, office luncheons, & more.
