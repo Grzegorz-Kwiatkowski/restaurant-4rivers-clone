@@ -9,6 +9,7 @@ import GiftCard from "./Pages/GiftCard/GiftCard";
 import Loyalty from './Pages/Loyalty/Loyalty'
 import SpecialtyCakes from "./Pages/SpecialtyCakes/SpecialtyCakes";
 import FullService from './Pages/Catering/FullService'
+import ContactUs from './Pages/Catering/ContactUs'
 
 import "./App.css";
 
@@ -32,6 +33,10 @@ function App() {
 
           <Route path="/full-service">
             <FullService />
+          </Route>
+
+          <Route path="/contact-us">
+            <ContactUs />
           </Route>
 
           <Route path="/gift-cards">
