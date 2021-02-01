@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Parallax } from "react-parallax";
-import {
-  Link, Route, Switch, useParams,
-  useRouteMatch
-} from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
+
 import { faYahoo } from "@fortawesome/free-brands-svg-icons";
+
 
 
 import "./Catering.css";
@@ -38,6 +37,8 @@ import winter_garden from "../../img/catering/winter-garden.jpeg";
 import winter_park from "../../img/catering/winter-park.jpeg";
 
 function Catering() {
+  const { url } = useRouteMatch();
+
   const [location, setLocation] = useState([
     {
       id: 1,
@@ -172,9 +173,11 @@ function Catering() {
           Need quick pick-up, large delivery, or full-service catering? 4 Rivers
           Smokehouse offers the best <br /> catering services for any occasion
           from{" "}
-          <Link to="/catering/wedding-catering" className="link">
-            weddings
-          </Link>
+
+          <Link to={`${url}/wedding-catering`} className="link" >weddings</Link>
+
+
+
           , parties, office luncheons, & more.
         </Info>
         <Link to="/catering/order-online#delivery">
@@ -191,6 +194,7 @@ function Catering() {
             Catering locations
           </Button>
         </Link>
+
       </Container>
 
 
@@ -212,13 +216,13 @@ function Catering() {
             color="#000"
             letterSpacing="1px">
             From{" "}
-            <Link to="/catering/wedding-catering" className="link">
+            <Link to={`${url}/wedding-catering`} className="link">
               weddings
             </Link>
             {" "}
             , receptions, and graduation parties to corporate events, school
             functions, and sporting events,{" "}
-            <Link tp="/catering/full-service" className="link">
+            <Link to={`${url}/full-service`} className="link">
               4 Rivers full-service catering
             </Link>{" "}
             can do it all, big and small.
@@ -231,7 +235,7 @@ function Catering() {
             hitch.
             <br />
             <br />
-            <Link to="/catering/contact-us" className="link">
+            <Link to={`${url}/contact-us`} className="link">
               Contact a 4 Rivers catering expert online
             </Link>{" "}
             or give us a call today at 844-474-8377 so we can learn more about
@@ -269,7 +273,7 @@ function Catering() {
             catering is sure to please all your guests..
             <br />
             <br />4 Rivers catering offers a variety of{" "}
-            <Link to="/catering/menu" className="link">
+            <Link to={`${url}/menu`} className="link">
               catering menus
             </Link>{" "}
             and packages for pickup and delivery, making ordering for your event
@@ -354,6 +358,7 @@ function Catering() {
         label="Find a location"
         link="/locations"
       />
+
 
 
     </div>

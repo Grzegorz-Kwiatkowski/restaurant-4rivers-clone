@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, useParams } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -10,6 +10,9 @@ import Loyalty from './Pages/Loyalty/Loyalty'
 import SpecialtyCakes from "./Pages/SpecialtyCakes/SpecialtyCakes";
 import FullService from './Pages/Catering/FullService'
 import ContactUs from './Pages/Catering/ContactUs'
+import Wedding from './Pages/Catering/Wedding'
+import Menu from './Pages/Catering/Menu'
+
 
 import "./App.css";
 
@@ -21,15 +24,25 @@ function App() {
     <Router>
 
       <div className="App">
+
         <Header />
         <Switch>
           <Route exact path="/">
             <Home />
           </Route>
 
-          <Route path="/catering">
-            <Catering />
-          </Route>
+          <Route
+            path="/catering"
+            render={({ match: { url } }) => (
+              <>
+                <Route path={`${url}/`} component={Catering} exact />
+                <Route path={`${url}/wedding-catering`} component={Wedding} />
+                <Route path={`${url}/full-service`} component={FullService} />
+                <Route path={`${url}/contact-us`} component={ContactUs} />
+                <Route path={`${url}/menu`} component={Menu} />
+              </>
+            )}
+          />
 
           <Route path="/full-service">
             <FullService />
