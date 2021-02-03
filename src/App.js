@@ -13,6 +13,7 @@ import ContactUs from './Pages/Catering/ContactUs'
 import Wedding from './Pages/Catering/Wedding'
 import Menu from './Pages/Catering/Menu'
 import Faq from './Pages/Loyalty/Faq'
+import Donation from './Pages/Loyalty/Donation'
 
 import "./App.css";
 
@@ -64,6 +65,9 @@ function App() {
             <Faq />
           </Route>
 
+          <Route path="/donation">
+            <Donation />
+          </Route>
           <Route path="/4r-specialty-cakes">
             <SpecialtyCakes />
           </Route>

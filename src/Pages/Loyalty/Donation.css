@@ -1,0 +1,19 @@
+.donation__content {
+    width: 65%;
+    font-family: "PatuaOne";
+}
+
+.donation__content>p,
+.donation__list>li {
+    font-size: 1.1em;
+}
+
+
+
+span:before,
+span:after {
+    content: '\00a0\00a0\00a0\00a0\00a0\00a0\00a0';
+    text-decoration: line-through;
+    margin: auto 0.5em;
+    color: gray;
+}
