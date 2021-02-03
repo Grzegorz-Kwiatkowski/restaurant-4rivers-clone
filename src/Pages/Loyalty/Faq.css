@@ -1,0 +1,61 @@
+.faq__section {
+    width: 70%;
+    font-family: "PatuaOne";
+    margin-bottom: 30px;
+}
+
+.faq__section:first-child {
+    margin-top: 30px;
+}
+
+.faq__section>h2 {
+    font-size: 1.7em;
+    margin-bottom: 30px;
+    margin-top: 60px;
+    letter-spacing: 2px;
+    font-weight: bold;
+
+}
+
+
+
+.faq__section>p:last-child {
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+
+.faq__section>ul {
+    padding: 0px;
+}
+
+.faq__section ul>li {
+    list-style-type: none;
+}
+
+.faq__section ul>li>a {
+    letter-spacing: 2px;
+
+}
+
+.faq__section>ul>li::before {
+    content: '';
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    background-size: 15px;
+    background-image: url('../../img/arrow_right.png');
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    background-position: center center;
+    vertical-align: middle;
+}
+
+.underline--gray::after {
+    padding-top: 50px !important;
+    border-bottom: 1px solid #808080 !important;
+}
+
+.link {
+    text-transform: uppercase;
+}

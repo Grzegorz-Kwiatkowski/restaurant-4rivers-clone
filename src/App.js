@@ -12,7 +12,7 @@ import FullService from './Pages/Catering/FullService'
 import ContactUs from './Pages/Catering/ContactUs'
 import Wedding from './Pages/Catering/Wedding'
 import Menu from './Pages/Catering/Menu'
-
+import Faq from './Pages/Loyalty/Faq'
 
 import "./App.css";
 
@@ -58,6 +58,10 @@ function App() {
 
           <Route path="/loyalty">
             <Loyalty />
+          </Route>
+
+          <Route path="/faq">
+            <Faq />
           </Route>
 
           <Route path="/4r-specialty-cakes">
