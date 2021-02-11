@@ -14,6 +14,7 @@ import Wedding from './Pages/Catering/Wedding'
 import Menu from './Pages/Catering/Menu'
 import Faq from './Pages/Loyalty/Faq'
 import Donation from './Pages/Loyalty/Donation'
+import MainMenu from './Pages/MainMenu/MainMenu'
 
 import "./App.css";
 
@@ -30,6 +31,10 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+
+          <Route path="/menu">
+            <MainMenu />
           </Route>
 
           <Route

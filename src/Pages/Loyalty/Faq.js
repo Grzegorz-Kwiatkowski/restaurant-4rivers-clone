@@ -46,7 +46,7 @@ function Faq() {
                     <p>For questions regarding your 4Rewards Loyalty account, please email us at:</p>
 
                     <ul>
-                        <li><a href="" className="link">4rewards@4rsmokehouse.com</a></li>
+                        <li><a href="" className="linkUp">4rewards@4rsmokehouse.com</a></li>
                     </ul>
                 </section>
 
@@ -87,7 +87,7 @@ function Faq() {
                     <p>We provide delivery services through our Catering Department. You can view our catering menu online. For catering orders, please feel free to call 321-972-1888 or 1-855-368-7748 (ext 3).</p>
 
                     <ul>
-                        <li><a href={catering_menu} target="_blank" className="link">View our catering menu</a></li>
+                        <li><a href={catering_menu} target="_blank" className="linkUp">View our catering menu</a></li>
                     </ul>
 
                     <p>Delivery is also available through UberEats, BiteSquad, Amazon Restaurants, and DoorDash
@@ -105,21 +105,21 @@ function Faq() {
                     <p>Yes, we do. Our sauces are available for purchase at all Smokehouse locations and online.</p>
 
                     <ul>
-                        <li><a href={catering_menu} target="_blank" className="link">View our online store</a></li>
+                        <li><a href={catering_menu} target="_blank" className="linkUp">View our online store</a></li>
                     </ul>
 
                     <h2>Do you have nutritional information?</h2>
                     <p>We do not have nutritional information for our menu items. We do however offer allergen information which is available through our menu.</p>
 
                     <ul>
-                        <li><a href={allergen_list} target="_blank" className="link">View our allergen list</a></li>
+                        <li><a href={allergen_list} target="_blank" className="linkUp">View our allergen list</a></li>
                     </ul>
 
                     <h2>Do you have reheating instructions?</h2>
                     <p>Yes, we do. A full list of reheating instructions is available through our menu.</p>
 
                     <ul>
-                        <li><a href={reheating_instructions} target="_blank" className="link">View our reheating instructions</a></li>
+                        <li><a href={reheating_instructions} target="_blank" className="linkUp">View our reheating instructions</a></li>
                     </ul>
                 </section>
 
@@ -134,7 +134,7 @@ function Faq() {
                     <p>Yes, we do. Please contact our Donations Coordinator using our donation form.</p>
 
                     <ul>
-                        <li><Link to="/donation" className="link">Contact us for donations</Link></li>
+                        <li><Link to="/donation" className="linkUp">Contact us for donations</Link></li>
                     </ul>
 
                     <h2>What is the best way to contact 4 Rivers?</h2>
@@ -142,12 +142,12 @@ function Faq() {
                     For all media and press inquiries please contact Bo Morris of </p><br />
 
                     <ul>
-                        <li><a href="https://story-farm.com/" className="link">Story farm</a></li>
+                        <li><a href="https://story-farm.com/" className="linkUp">Story farm</a></li>
                     </ul>
                     <p>at bomorris@story-farm.com</p>
 
                     <ul>
-                        <li><Link to="/contact" className="link">Contact us</Link></li>
+                        <li><Link to="/contact" className="linkUp">Contact us</Link></li>
                     </ul>
                 </section>
 

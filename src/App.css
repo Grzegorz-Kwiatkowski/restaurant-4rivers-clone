@@ -44,13 +44,31 @@
   border-bottom: 2px solid #808080;
 }
 
-.link {
+.link,
+.linkUp {
   color: #873431;
   text-decoration: underline;
 }
 
+.linkUp {
+  text-transform: uppercase;
+}
 
 
-.link:hover {
+.link:hover,
+.linkUp:hover {
   color: #873431;
+}
+
+.link--gray {
+  text-decoration: underline;
+  color: gray;
+  font-family: "PatuaOne";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+}
+
+.link--gray:hover {
+  color: #886735;
 }

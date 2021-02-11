@@ -8,8 +8,6 @@
     font-size: 1.1em;
 }
 
-
-
 span:before,
 span:after {
     content: '\00a0\00a0\00a0\00a0\00a0\00a0\00a0';

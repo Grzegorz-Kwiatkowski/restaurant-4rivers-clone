@@ -14,6 +14,9 @@ const Header = styled.h1`
   padding-left: ${(props) => props.paddingLeft || "0px"};
   padding-right: ${(props) => props.paddingRight || "0px"};
   font-weight: ${(props) => (props.fontBold ? "bold" : "none")};
+  &:hover {
+    color:${props => props.colorHover || ""}
+  }
 `;
 
 const Info = styled.p`
@@ -79,6 +82,7 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   padding: ${(props) => props.padding || ""};
+  height:${props => props.height || ""};
 `;
 
 
