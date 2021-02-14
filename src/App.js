@@ -15,6 +15,7 @@ import Menu from './Pages/Catering/Menu'
 import Faq from './Pages/Loyalty/Faq'
 import Donation from './Pages/Loyalty/Donation'
 import MainMenu from './Pages/MainMenu/MainMenu'
+import MissedVisit from './Pages/Loyalty/MissedVisit'
 
 import "./App.css";
 
@@ -62,9 +63,17 @@ function App() {
             <GiftCard />
           </Route>
 
-          <Route path="/loyalty">
-            <Loyalty />
-          </Route>
+
+
+          <Route
+            path="/loyalty"
+            render={({ match: { url } }) => (
+              <>
+                <Route path={`${url}/`} component={Loyalty} exact />
+                <Route path={`${url}/missed-visit`} component={MissedVisit} />
+              </>
+            )}
+          />
 
           <Route path="/faq">
             <Faq />

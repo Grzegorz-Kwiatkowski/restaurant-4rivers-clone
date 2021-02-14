@@ -52,6 +52,7 @@ const Button = styled.button`
   font-family: Verlag;
   border: none;
   letter-spacing: 4px;
+  width:${props => props.width || ""};
   margin-bottom: ${(props) => props.marginBottom || "10px"};
   margin-top: ${(props) => props.marginTop || ""};
   margin-right: ${(props) => props.marginRight || ""};

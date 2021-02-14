@@ -1,6 +1,6 @@
 import React from 'react'
 import { Parallax } from "react-parallax";
-import { Link } from 'react-router-dom'
+import { Link, useRouteMatch } from 'react-router-dom'
 
 import './Loyalty.css'
 import { Container, Header, Info, Button, Image } from '../../Styled Components/styled-components'
@@ -10,6 +10,8 @@ import meat from '../../img/loyalty/meat_img.jpg'
 import loyalty_logo from '../../img/loyalty/loyalty-program-img.png'
 
 function Loyalty() {
+    const { url } = useRouteMatch();
+
     return (
         <div className="loyalty">
             <Parallax bgImage={meat} strength={250}>
@@ -112,7 +114,7 @@ function Loyalty() {
                     We can help add a visit to your loyalty account. Submit your visit information here or tap the button below.<br /><br />
                    If you questions regarding your 4Rewards loyalty account, contact us and one of our team members will be happy to assist you.<br /><br />
                 </Info>
-                <Link to="/loyalty/missed-visit/">
+                <Link to={`${url}/missed-visit`}>
                     <Button colorBeige >Add a visit</Button>
                 </Link>
             </Container>
