@@ -9,6 +9,12 @@ import parallax_bg from '../../img/missed-visit/parallax-bg.jpg'
 import card_info from '../../img/missed-visit/card-info.jpg'
 
 function MissedVisit() {
+    const beerURL = "https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/56ec2ba9ebc2e3d12c0f";
+
+    fetch(beerURL)
+        .then(response => response.json())
+        .then(data => console.log(data))
+
     return (
         <div className="missed-visit">
 

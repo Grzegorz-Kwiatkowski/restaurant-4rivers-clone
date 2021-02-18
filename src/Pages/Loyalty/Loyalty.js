@@ -2,6 +2,7 @@ import React from 'react'
 import { Parallax } from "react-parallax";
 import { Link, useRouteMatch } from 'react-router-dom'
 
+
 import './Loyalty.css'
 import { Container, Header, Info, Button, Image } from '../../Styled Components/styled-components'
 import Suggestion from '../../components/Suggestion'
@@ -53,6 +54,7 @@ function Loyalty() {
 
                 <Button colorBeige marginBottom="50px">Sign up now</Button>
             </Container>
+
 
 
             <Container className="underline--gray" padding="40px 220px 40px 220px">

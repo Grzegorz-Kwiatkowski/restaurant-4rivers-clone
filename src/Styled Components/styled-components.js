@@ -24,7 +24,7 @@ const Info = styled.p`
   font-weight: "bold";
   font-size: ${(props) => props.fontSize || "1.2em"};
   text-transform: ${(props) => (props.smallLetter ? "none" : "uppercase")};
-  text-align: center;
+  text-align: ${props => props.textAlign || "center"};
   color: ${(props) => props.color || "#fff"};
   margin-top: ${(props) => props.marginTop || "25px"};
   margin-bottom: ${(props) => props.marginBottom || "25px"};
@@ -84,6 +84,7 @@ const Container = styled.div`
   flex-direction: column;
   padding: ${(props) => props.padding || ""};
   height:${props => props.height || ""};
+  width:${props => props.width || ""};
 `;
 
 

@@ -27,7 +27,6 @@ function Header() {
                 <ul className="header__list">
                     <li><Link to="/menu">menu</Link></li>
                     <li><Link to="/catering">catering</Link></li>
-                    <li><Link to="holiday">holiday</Link></li>
                     <li><Link to="/gift-cards">gift card</Link></li>
                     <li><Link to="/shop">shop</Link></li>
                     <li><Link to="/mail_order">mail order</Link></li>

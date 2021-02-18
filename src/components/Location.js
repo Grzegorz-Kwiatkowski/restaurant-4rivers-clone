@@ -6,8 +6,10 @@ import {
   Button,
   Container,
 } from "../Styled Components/styled-components";
+import { Link } from 'react-router-dom'
 
-function Location({ id, name, address, city, image,info,btnLabel }) {
+
+function Location({ id, name, address, city, image, info, btnLabel, price, link }) {
   return (
     <div className="location" style={{ backgroundImage: "url(" + image + ")" }}>
       <div className="location__backgroundRed"></div>
@@ -21,10 +23,14 @@ function Location({ id, name, address, city, image,info,btnLabel }) {
           <Info fontSize="1em" marginTop="5px">
             {city}
           </Info>
-          <Info smallLetter fontSize=".8em">{info}</Info> 
+          <Info fontSize="1em" marginTop="0px" marginBottom="0px">
+            {price}
+          </Info>
+          <Info smallLetter fontSize=".8em">{info}</Info>
         </div>
-
-        <Button marginTop="25px">{btnLabel}</Button>
+        <Link to={link}>
+          <Button marginTop="25px">{btnLabel}</Button>
+        </Link>
       </Container>
     </div>
   );

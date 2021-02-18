@@ -16,6 +16,9 @@ import Faq from './Pages/Loyalty/Faq'
 import Donation from './Pages/Loyalty/Donation'
 import MainMenu from './Pages/MainMenu/MainMenu'
 import MissedVisit from './Pages/Loyalty/MissedVisit'
+import Shop from './Pages/Shop/Shop'
+import Product from './components/Product'
+import ShopContextProvider from './Contexts/ShopContextProvider'
 
 import "./App.css";
 
@@ -29,6 +32,10 @@ function App() {
       <div className="App">
 
         <Header />
+
+
+
+
         <Switch>
           <Route exact path="/">
             <Home />
@@ -64,6 +71,19 @@ function App() {
           </Route>
 
 
+          <Route
+            path="/shop"
+            render={({ match: { url } }) => (
+              <>
+                <ShopContextProvider>
+                  <Route path={`${url}/`} component={Shop} exact />
+                  <Route path={`${url}/:id`} component={Product} />
+                </ShopContextProvider>
+              </>
+            )}
+          />
+
+
 
           <Route
             path="/loyalty"
@@ -88,6 +108,7 @@ function App() {
 
 
         </Switch>
+
         <Footer />
       </div>
     </Router>
