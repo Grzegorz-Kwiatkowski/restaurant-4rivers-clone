@@ -53,6 +53,7 @@ const Button = styled.button`
   border: none;
   letter-spacing: 4px;
   width:${props => props.width || ""};
+  height:${props => props.height || ""};
   margin-bottom: ${(props) => props.marginBottom || "10px"};
   margin-top: ${(props) => props.marginTop || ""};
   margin-right: ${(props) => props.marginRight || ""};
