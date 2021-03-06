@@ -3,12 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
 
 import './Product.css'
-import { Container, Image, Header, Info } from '../Styled Components/styled-components';
+import { Container, Image, Header, Info, Button } from '../Styled Components/styled-components';
 import SubProduct from './SubProduct';
 
 import Location from './Location'
 
-import { ShopContext } from '../Contexts/Contexts'
+import { MainContext } from '../Contexts/Contexts'
 
 const Product = (props) => {
 
@@ -16,25 +16,29 @@ const Product = (props) => {
     const index = props.match.params.id;
 
     return (
-        <ShopContext.Consumer>
+        <MainContext.Consumer>
             {(context) => {
-                const { shopProducts, changeString } = context;
+                const { allProducts, changeString, onChange, addToBasket, handlePrice } = context;
 
-                const singleProduct = shopProducts.filter(item => changeString(item.header) === index);
-                const foodAndSauces = shopProducts.filter(product => product.category === "food&sauces");
-                const retail = shopProducts.filter(product => product.category === "retail");
+                const singleProduct = allProducts.filter(item => changeString(item.header) === index);
+            
+                const foodAndSauces = allProducts.filter(product => product.category === "food&sauces");
+                const retail = allProducts.filter(product => product.category === "retail");
 
+                let restOfRelatedFoodProducts = foodAndSauces.filter(product => changeString(product.header) !== index);
                 let relatedFoodProducts = [];
+
                 while (relatedFoodProducts.length < 4) {
-                    let index = Math.floor(Math.random() * foodAndSauces.length);
-                    if (relatedFoodProducts.indexOf(relatedFoodProducts[index]) === -1)
-                        relatedFoodProducts.push(foodAndSauces[index])
+                    let index = Math.floor(Math.random() * restOfRelatedFoodProducts.length);
+                    relatedFoodProducts.push(restOfRelatedFoodProducts[index]);
+                    relatedFoodProducts = Array.from(new Set(relatedFoodProducts));
                 }
+
 
                 let relatedRetailProducts = retail.filter(item => changeString(item.header) !== index);
 
-                console.log("Related products")
-                console.log(relatedRetailProducts)
+
+
                 const isArray = Array.isArray(singleProduct[0].image);
 
                 return (
@@ -76,6 +80,24 @@ const Product = (props) => {
                                 <Info color="#000" fontSize=".8em" textAlign="left" marginTop="0px" fontFamily="PatuaOne">
                                     {singleProduct[0].content}
                                 </Info>
+                                {Array.isArray(singleProduct[0].price) ? (
+                                    <div>
+                                        <select
+                                            disabled={Array.isArray(singleProduct[0].price) ? false : true}
+                                            value={singleProduct[0].price}
+                                            onChange={(e) => handlePrice(singleProduct[0].id, e)}
+
+                                        >
+                                            <option value="" hidden >{Array.isArray(singleProduct[0].price) ? "Choose an option" : singleProduct[0].price}</option>
+                                            <option value={singleProduct[0].price[0]}>{singleProduct[0].price[0]}</option>
+                                            <option value={singleProduct[0].price[1]}>{singleProduct[0].price[1]}</option>
+                                        </select>
+                                        <input type="number" min="1" onChange={(e) => onChange(singleProduct[0].id, e)} value={singleProduct[0].amount} />
+
+                                    </div>
+                                ) : ("")
+                                }
+                                <Button colorBeige onClick={() => addToBasket(singleProduct[0])}>Add to cart</Button>
                             </div>
 
                 )
@@ -106,7 +128,7 @@ const Product = (props) => {
             }
             }
 
-        </ShopContext.Consumer >
+        </MainContext.Consumer >
     )
 }
 

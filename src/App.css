@@ -18,6 +18,11 @@
   src: local("PatuaOne"), url("./font/PatuaOne-Regular.ttf") format("opentype");
 }
 
+@font-face {
+  font-family: "ArchivoBlack";
+  src: local("ArchivoBlack"), url("./font/ArchivoBlack.ttf") format("opentype");
+}
+
 .underline--white::after {
   content: "";
   /* This is necessary for the pseudo element to work. */
@@ -66,6 +71,7 @@
 .linkUp {
   color: #873431;
   text-decoration: underline;
+  font-family: "PatuaOne";
 }
 
 .linkUp {

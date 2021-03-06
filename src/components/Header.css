@@ -79,6 +79,13 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
+.header__basketWrapper:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 .header__basket {

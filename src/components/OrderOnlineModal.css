@@ -85,7 +85,7 @@
 }
 
 .showModal {
-    z-index: 100000000;
+    /* z-index: 100000000; */
     top: 0%;
 }
 

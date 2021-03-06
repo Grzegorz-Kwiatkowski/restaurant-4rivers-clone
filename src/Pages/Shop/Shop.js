@@ -17,7 +17,7 @@ import mustard_barbecue_sauce_1 from '../../img/shop/MUSTARD-BARBECUE-SAUCE-1.jp
 import pitmaster_kit_1 from '../../img/shop/Pitmaster-Kit-1.jpg'
 import signature_barbecue_sauce_1 from '../../img/shop/SIGNATURE-BARBECUE-SAUCE-1.jpg'
 import shop_banner from '../../img/shop/shop-banner.jpg'
-import { ShopContext } from '../../Contexts/Contexts';
+import { MainContext } from '../../Contexts/Contexts';
 
 
 
@@ -39,17 +39,18 @@ function Shop() {
             </Container>
 
 
-            <ShopContext.Consumer>
+            <MainContext.Consumer>
                 {(context) => {
                     const { shopProducts, changeString } = context;
+
                     const foodAndSauces = shopProducts.filter(product => product.category === "food&sauces");
                     return (
                         <div className="shop__products">
-                            {foodAndSauces.map(item => <Location id={item.id} name={item.header} price={item.price} image={Array.isArray(item.image) ? item.image[0] : item.image} btnLabel="view details" link={`/shop/` + changeString(item.header) + '/'} />)}
+                            {foodAndSauces.map(item => <Location id={item.id} name={item.header} price={item.priceInfo} image={Array.isArray(item.image) ? item.image[0] : item.image} btnLabel="view details" link={`/shop/` + changeString(item.header) + '/'} />)}
                         </div>
                     )
                 }}
-            </ShopContext.Consumer>
+            </MainContext.Consumer>
 
 
 
@@ -58,18 +59,18 @@ function Shop() {
             </Container>
 
 
-            <ShopContext.Consumer>
+            <MainContext.Consumer>
                 {(context) => {
                     const { shopProducts, changeString } = context;
                     const retail = shopProducts.filter(product => product.category === "retail");
 
                     return (
                         <div className="shop__products">
-                            {retail.map(item => <Location id={item.id} name={item.header} price={item.price} image={Array.isArray(item.image) ? item.image[0] : item.image} btnLabel="view details" link={`/shop/` + changeString(item.header) + '/'} />)}
+                            {retail.map(item => <Location id={item.id} name={item.header} price={item.priceInfo} image={Array.isArray(item.image) ? item.image[0] : item.image} btnLabel="view details" link={`/shop/` + changeString(item.header) + '/'} />)}
                         </div>
                     )
                 }}
-            </ShopContext.Consumer>
+            </MainContext.Consumer>
 
 
 

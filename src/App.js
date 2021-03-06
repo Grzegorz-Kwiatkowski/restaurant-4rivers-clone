@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { createBrowserHistory } from 'history'
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -18,12 +19,17 @@ import MainMenu from './Pages/MainMenu/MainMenu'
 import MissedVisit from './Pages/Loyalty/MissedVisit'
 import Shop from './Pages/Shop/Shop'
 import Product from './components/Product'
-import ShopContextProvider from './Contexts/ShopContextProvider'
 import OrderOnlineModal from './components/OrderOnlineModal'
-
+import Cart from './Pages/Cart/Cart'
+import Checkout from "./Pages/Cart/Checkout";
+import CheckoutProvider from './Pages/Cart/CheckoutProvider'
 
 import "./App.css";
+import './ss.scss'
+import PaymentSuccesfull from "./Pages/Cart/PaymentSuccesfull";
 
+
+const history = createBrowserHistory()
 
 class App extends Component {
 
@@ -75,10 +81,10 @@ class App extends Component {
               path="/shop"
               render={({ match: { url } }) => (
                 <>
-                  <ShopContextProvider>
-                    <Route path={`${url}/`} component={Shop} exact />
-                    <Route path={`${url}/:id`} component={Product} />
-                  </ShopContextProvider>
+
+                  <Route path={`${url}/`} component={Shop} exact />
+                  <Route path={`${url}/:id`} component={Product} />
+
                 </>
               )}
             />
@@ -102,10 +108,22 @@ class App extends Component {
             <Route path="/donation">
               <Donation />
             </Route>
+
             <Route path="/4r-specialty-cakes">
               <SpecialtyCakes />
             </Route>
 
+            <Route path="/cart">
+              <Cart />
+            </Route>
+
+            <Route path="/checkout">
+              <CheckoutProvider history={history} />
+            </Route>
+
+            <Route path="/ok">
+              <PaymentSuccesfull />
+            </Route>
 
           </Switch>
 

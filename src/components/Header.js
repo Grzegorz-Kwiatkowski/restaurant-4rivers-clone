@@ -15,7 +15,10 @@ function Header() {
     return (
         <MainContext.Consumer>
             {context => {
-                const { toggleOrderOnline } = context;
+                const { toggleOrderOnline, amount, addedToBasket } = context;
+                console.log("Added to basket : ")
+                console.log(amount)
+
                 return (
                     <div className="header">
 
@@ -40,15 +43,15 @@ function Header() {
                         </nav>
 
 
-                        <div className="header__basketWrapper" onClick={(e) => history.push('/basket')} >
+                        <Link to="/cart" className="header__basketWrapper">
                             <div className="header__cart">
                                 <p>Cart</p>
                             </div>
                             <div className="header__basket">
-                                <span className="header__basketCount">0</span>
+                                <span className="header__basketCount">{addedToBasket.length > 0 ? addedToBasket.length : "0"}</span>
                                 <ShoppingCartOutlinedIcon style={{ color: "#a37c3d", fontSize: 30 }} />
                             </div>
-                        </div>
+                        </Link>
                     </div>
                 )
             }}
