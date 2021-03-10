@@ -1,127 +1,25 @@
-body {
-    position: relative;
-    width: 100%;
-    min-height: 100%;
+html {
+    font-size: 20px;
 }
 
-#root {
 
-    /* border: 5px solid red; */
-}
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 100%;
-  height: 60px;
-  position: sticky;
-  top: 0px;
-  background-color: #141414;
-  color: white;
-  z-index: 99;
+@media (max-width: 1199.98px) {
+    html {
+        font-size: 18px;
+    }
 }
 
-.header__logo {
-  display: flex;
-  align-items: center;
+@media (max-width: 991.98px) {
+    html {
+        font-size: 16px;
+    }
 }
 
-.header__fullName {
-  height: 15px;
-  width: 190px;
-}
+@media (max-width: 767.98px) {
+    html {
+        font-size: 14px;
+    }
 
-.header__nav {
-  height: 100%;
-}
-
-.header__list {
-  display: flex;
-  list-style-type: none;
-  height: 100%;
-}
-
-.header__list>li {
-  display: flex;
-  align-items: center;
-}
-
-.header__list>li>a {
-  color: #756f65;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: Verlag;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.header__list>li+li>a {
-  border-left: 2px solid #886735;
-}
-
-.header__orderOnline {
-  background-color: #886735;
-  color: #dacfbf;
-  display: flex;
-  align-items: center;
-  padding-right: 15px;
-  padding-left: 15px;
-  text-decoration: none;
-}
-
-.header__orderOnline:hover {
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.header__orderOnline>li {
-  color: #dacfbf;
-  font-size: 1em;
-  font-family: Verlag;
-  text-transform: uppercase;
-}
-
-.header__list>li>a:hover {
-  color: #a37c3d;
-}
-
-.header__basketWrapper {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  text-decoration: none;
-  color: #fff;
-}
-
-.header__basketWrapper:hover {
-  color: #fff;
-  text-decoration: none;
-}
-
-.header__basket {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.header__cart {
-  margin-right: 15px;
-  display: flex;
-  align-items: center;
-}
-
-.header__cart>p {
-  font-size: 1.4em;
-  margin: auto 0;
-}
-
-.header__basketCount {
-  width: 25px;
-  height: 20px;
-  background-color: #90887c;
-  text-align: center;
-  font-size: 1em;
 }
 a.social {
   margin: 0 1rem;
@@ -134,128 +32,6 @@ a.social:hover {
   color: #fff;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap");
-
-.footer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.footer__top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
-  background-color: #1c1c1c;
-}
-
-.footer__loyalty {
-  height: 250px;
-  width: 200px;
-}
-
-.footer__loyaltyBg {
-  background-image: url("/4R-logo-bg.9d7daff5.jpg");
-  background-position: center;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  height: 100%;
-  width: 100%;
-  transition: 500ms;
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-
-.footer__loyaltyBg:hover {
-  background-size: 120%;
-}
-
-.footer__loyaltyBg>p {
-  color: #ffffff;
-  font-family: "Sansita Swashed", cursive;
-  font-size: 1.2em;
-}
-
-.footer__section {
-  margin-top: 25px;
-}
-
-.footer__header {
-  color: #ffffff;
-  font-family: Verlag;
-  text-transform: uppercase;
-  text-align: left;
-  width: 100%;
-  font-size: 1.1em;
-}
-
-.footer__header>a {
-  color: #fff;
-}
-
-.footer__list {
-  padding: 30px;
-}
-
-.footer__list>li {
-  list-style-type: none;
-  margin-bottom: 5px;
-  list-style-image: url("/arrow_right.57a5452f.png");
-}
-
-.footer__list>li>a {
-  text-decoration: none;
-  color: #8d8d8d;
-  text-transform: uppercase;
-  transition: 500ms;
-}
-
-.footer__list>li>a:hover {
-  color: #866535;
-}
-
-.footer__contact>p {
-  color: #7f7f7f;
-}
-
-.footer__contactBtn {
-  background-color: #886735;
-  width: 135px;
-  height: 45px;
-  text-transform: uppercase;
-  color: #fff;
-  font-size: 0.9em;
-  border-radius: 3px;
-  font-family: Verlag;
-  border: 0;
-  transition: 300ms;
-}
-
-.footer__contactBtn:hover {
-  background-color: #fff;
-  color: #886735;
-}
-
-.footer__bottom {
-  background-color: #000000;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 70px;
-}
-
-.footer__copyright {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer__copyright>p {
-  font-size: 1.1em;
-  color: #808080;
-}
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors

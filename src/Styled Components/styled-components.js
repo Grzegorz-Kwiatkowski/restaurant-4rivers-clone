@@ -171,7 +171,7 @@ padding:10px;
 // checkout
 
 const Wrapper = styled.div`
-padding:${props => props.padding || "0px 0px"};
+ 
 
 `;
 

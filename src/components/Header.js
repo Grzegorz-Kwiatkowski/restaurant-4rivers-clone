@@ -1,62 +1,117 @@
-import React from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { useHistory } from 'react-router-dom'
-import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
-import './Header.css'
+import { Squash as Hamburger } from 'hamburger-react'
+import { motion, AnimatePresence } from 'framer-motion';
+
+import { MainContext } from '../Contexts/Contexts'
+
+import {
+    HeaderContainer, HeaderLink, HeaderList, HeaderListItem,
+    HeaderLogoWrapper, HeaderNav, HeaderAlink, OrderBtnWrapper,
+    BasketWrapper, BasketCartText, BasketLink, BasketCountText, HeaderLogoImg,
+    HeaderFullLogoImg, BasketIcon, MobileIcon
+} from './Header/Header.elements';
 
 import logo_4R from '../img/4R-logo.png';
 import full_name_4R from '../img/4R-full-name.png'
 
-import { MainContext } from '../Contexts/Contexts'
+
+// const MobileMenuVariants = {
+//     hidden: {
+//         opacity: 0,
+//         y: "-100vh",
+//         transition: {
+//             duration: 1,
+//             delay: 1
+//         }
+//     },
+//     visible: {
+//         opacity: 1,
+//         y: "0px",
+//         transition: {
+//             duration: 1,
+//             delay: 1,
+//         }
+//     },
+// }
 
 
 function Header() {
-    const history = useHistory();
+
+
+    const context = useContext(MainContext);
+    const [click, setClick] = useState(false);
+    const handleClick = () => {
+        setClick(!click);
+    }
+    const closeMobileMenu = () => setClick(false);
+
+
+
+    console.log(click)
     return (
-        <MainContext.Consumer>
-            {context => {
-                const { toggleOrderOnline, amount, addedToBasket } = context;
-                console.log("Added to basket : ")
-                console.log(amount)
+        <HeaderContainer >
 
-                return (
-                    <div className="header">
+            <MobileIcon onClick={handleClick}>
+                <Hamburger toggled={click} toggle={setClick} color="#886735" />
+            </MobileIcon>
 
-                        <Link to="/">
-                            <div className="header__logo">
-                                <img src={logo_4R} alt="" />
-                                <img className="header__fullName" src={full_name_4R} alt="" />
-                            </div>
-                        </Link>
+            <Link to="/">
+                <HeaderLogoWrapper>
+                    <HeaderLogoImg src={logo_4R} />
+                    <HeaderFullLogoImg src={full_name_4R} alt="" width="10rem" height=".7rem" />
+                </HeaderLogoWrapper>
+            </Link>
 
 
-                        <nav className="header__nav">
-                            <ul className="header__list">
-                                <li><Link to="/menu">menu</Link></li>
-                                <li><Link to="/catering">catering</Link></li>
-                                <li><Link to="/gift-cards">gift card</Link></li>
-                                <li><Link to="/shop">shop</Link></li>
-                                <li><a href="https://www.goldbelly.com/4-rivers-smokehouse" target="_blank">mail order</a></li>
-                                <li><Link to="/loyalty">loyalty</Link></li>
-                                <a className="header__orderOnline" onClick={toggleOrderOnline}><li>order online</li></a>
-                            </ul>
-                        </nav>
 
 
-                        <Link to="/cart" className="header__basketWrapper">
-                            <div className="header__cart">
-                                <p>Cart</p>
-                            </div>
-                            <div className="header__basket">
-                                <span className="header__basketCount">{addedToBasket.length > 0 ? addedToBasket.length : "0"}</span>
-                                <ShoppingCartOutlinedIcon style={{ color: "#a37c3d", fontSize: 30 }} />
-                            </div>
-                        </Link>
-                    </div>
-                )
-            }}
-        </MainContext.Consumer>
+            <HeaderNav click={click}>
+                <HeaderList>
+                    <HeaderListItem><HeaderLink to="/menu" onClick={closeMobileMenu}>menu</HeaderLink></HeaderListItem>
+                    <HeaderListItem><HeaderLink to="/catering" onClick={closeMobileMenu}>catering</HeaderLink></HeaderListItem>
+                    <HeaderListItem><HeaderLink to="/easter" onClick={closeMobileMenu}>easter</HeaderLink></HeaderListItem>
+                    <HeaderListItem><HeaderLink to="/gift-cards" onClick={closeMobileMenu}>gift card</HeaderLink></HeaderListItem>
+                    <HeaderListItem><HeaderLink to="/shop" onClick={closeMobileMenu}>shop</HeaderLink></HeaderListItem>
+                    <HeaderListItem><HeaderAlink href="https://www.goldbelly.com/4-rivers-smokehouse" target="_blank" onClick={closeMobileMenu}>mail order</HeaderAlink></HeaderListItem>
+                    <HeaderListItem><HeaderLink to="/loyalty" onClick={closeMobileMenu}>loyalty</HeaderLink></HeaderListItem>
+                    <HeaderAlink padding="0" onClick={closeMobileMenu} >
+                        <OrderBtnWrapper onClick={context.toggleOrderOnline}>
+                            <HeaderListItem>order online</HeaderListItem>
+                        </OrderBtnWrapper>
+                    </HeaderAlink>
+                </HeaderList>
+            </HeaderNav>
+
+
+
+
+
+
+
+            <BasketLink to="/cart">
+
+                <BasketWrapper>
+                    <BasketCartText>
+                        Cart
+                    </BasketCartText>
+
+                    <BasketWrapper column>
+                        <BasketCountText>
+                            {context.addedToBasket.length > 0 ? context.addedToBasket.length : "0"}
+                        </BasketCountText>
+
+                        <BasketIcon />
+
+                    </BasketWrapper>
+                </BasketWrapper>
+
+            </BasketLink >
+        </HeaderContainer >
     )
+
+
+
 
 
 

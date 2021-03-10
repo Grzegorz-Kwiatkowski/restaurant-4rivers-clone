@@ -1,10 +1,23 @@
-body {
-    position: relative;
-    width: 100%;
-    min-height: 100%;
+html {
+    font-size: 20px;
 }
 
-#root {
 
-    /* border: 5px solid red; */
+@media (max-width: 1199.98px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    html {
+        font-size: 14px;
+    }
+
 }
