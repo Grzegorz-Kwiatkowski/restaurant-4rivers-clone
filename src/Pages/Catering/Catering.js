@@ -2,224 +2,109 @@ import React, { useState } from "react";
 import { Parallax } from "react-parallax";
 import { Link, useRouteMatch } from "react-router-dom";
 
-import { faYahoo } from "@fortawesome/free-brands-svg-icons";
-
-
-
-import "./Catering.css";
 import {
-  Header,
+  CateringContainer,
+  CateringHeader,
+  CateringHeaderBig,
+  CateringInfo,
+  CateringButton,
+  CateringWrapper,
+  CateringParallaxContainer,
+  CateringLocationWrapper
+} from "./Catering.elements"
+
+import {
   Container,
-  Info,
-  Button,
   Image,
 } from "../../Styled Components/styled-components";
-import Location from "../../components/Location";
-import Suggestion from "../../components/Suggestion";
-import Wedding from '../../Pages/Catering/Wedding'
+
+import { locations } from '../../data';
+
+import Location from "../../components/Location/Location";
+import Advertisement from '../../components/Advertisement/Advertisement'
 
 import parallax_catering_bg from "../../img/catering/parallax-catering-bg.jpeg";
 import team_members from "../../img/catering/team-members.jpeg";
 import delivery_look from "../../img/catering/delivery-look.jpeg";
 import food_truck from "../../img/catering/food-truck.jpeg";
-import carrollwood from "../../img/catering/carrollwood.jpeg";
-import coral_springs from "../../img/catering/coral-springs.jpeg";
-import daytona from "../../img/catering/daytona.jpeg";
-import gainesville from "../../img/catering/gainesville.jpeg";
-import jacksonville from "../../img/catering/jacksonville.jpeg";
-import kissimee from "../../img/catering/kissimmee.jpeg";
-import longwood from "../../img/catering/longwood.jpeg";
-import orange_park from "../../img/catering/orange-park.jpeg";
-import south_tampa from "../../img/catering/south-tampa.jpeg";
-import tallahassee from "../../img/catering/tallahassee.jpeg";
-import east_orlando from "../../img/catering/UCF-east-orlando.jpeg";
-import winter_garden from "../../img/catering/winter-garden.jpeg";
-import winter_park from "../../img/catering/winter-park.jpeg";
+
+
 
 function Catering() {
-  const { url } = useRouteMatch();
 
-  const [location, setLocation] = useState([
-    {
-      id: 1,
-      name: "Carrollwood",
-      address: "14330 N Dale Mabry Hwy",
-      city: "Tampa FL 33618",
-      image: carrollwood,
-    },
-    {
-      id: 2,
-      name: "Coral Springs",
-      address: "2660 North University Drive",
-      city: "Coral Springs FL 33065",
-      image: coral_springs,
-    },
-    {
-      id: 3,
-      name: "Daytona",
-      address: "1866 Victory Cir",
-      city: "Daytona Beach FL 32114",
-      image: daytona,
-    },
-    {
-      id: 4,
-      name: "Gainesville",
-      address: "3262 SW 35th Blvd",
-      city: "Gainesville FL 32608",
-      image: gainesville,
-    },
-    {
-      id: 5,
-      name: "Jacksonville",
-      address: "9220 Baymeadows Road",
-      city: "Jacksonville FL 32256",
-      image: jacksonville,
-    },
-    {
-      id: 6,
-      name: "Kissimmee",
-      address: "874 W Osceola Pkwy",
-      city: "Kissimmee FL 34741",
-      image: kissimee,
-    },
-    {
-      id: 7,
-      name: "Longwood",
-      address: "1869 West State Road 434",
-      city: "Longwood FL 32750",
-      image: longwood,
-    },
-    {
-      id: 8,
-      name: "Orange Park",
-      address: "220 Park Ave",
-      city: "Orange Park FL 32073",
-      image: orange_park,
-    },
-    {
-      id: 9,
-      name: "South Tampa",
-      address: "623 South MacDill Avenue",
-      city: "Tampa FL 33609",
-      image: south_tampa,
-    },
-    {
-      id: 10,
-      name: "Tallahassee",
-      address: "1817 Thomasville Road Ste.100",
-      city: "Tallahassee Florida 32303",
-      image: tallahassee,
-    },
-    {
-      id: 11,
-      name: "UCF-East Orlando",
-      address: "11764 University Blvd",
-      city: "Orlando FL 32817",
-      image: east_orlando,
-    },
-    {
-      id: 12,
-      name: "Winter Garden",
-      address: "1047 South Dillard Street",
-      city: "Winter Garden FL 34787",
-      image: winter_garden,
-    },
-    {
-      id: 13,
-      name: "Winter Park",
-      address: "1600 West Fairbanks Avenue",
-      city: "Winter Park FL 32789",
-      image: winter_park,
-    },
-  ]);
+  const { url } = useRouteMatch();
+  const [location, setLocation] = useState(locations);
 
 
   return (
-    <div className="catering">
-      <Parallax bgImage={parallax_catering_bg} strength={250}>
-        <Container
-          padding="80px"
-          className="home__sauces"
-          style={{ height: "100vh" }}>
-          <Header
-            className="underline--white"
-            fontSize="7em"
-            letterSpacing="12px">
+    <CateringContainer>
+
+      <Parallax
+        bgImage={parallax_catering_bg}
+        strength={250}
+      >
+        <CateringParallaxContainer>
+
+          <CateringHeaderBig>
             BBQ Catering at Its Best
-          </Header>
-          <Info letterSpacing="1px">
+          </CateringHeaderBig>
+
+          <CateringInfo fontUp white size="1.2rem" ls="3px">
             Offering expert services for <br />
             pickup, delivery, and full-service catering
-          </Info>
+          </CateringInfo>
 
           <Link to="/catering/order-online">
-            <Button marginTop="10px">Order catering online</Button>
+            <CateringButton>Order catering online</CateringButton>
           </Link>
           <Link to="/catering/contact-us">
-            <Button colorBeige>Talk to a catering expert</Button>
+            <CateringButton colorBeige>Talk to a catering expert</CateringButton>
           </Link>
-        </Container>
+        </CateringParallaxContainer>
       </Parallax>
 
-      <Container className="underline--gray" padding="40px 220px 40px 220px">
-        <Header color="#000" fontFamily="PatuaOne" smallLetter>
+
+      <CateringWrapper>
+
+        <CateringHeader>
           Smokin' good catering for your next special event
-        </Header>
-        <Info
-          fontFamily="PatuaOne"
-          smallLetter
-          color="#000"
-          letterSpacing="1px">
+        </CateringHeader>
+
+        <CateringInfo >
           Need quick pick-up, large delivery, or full-service catering? 4 Rivers
-          Smokehouse offers the best <br /> catering services for any occasion
+          Smokehouse offers the best catering services for any occasion
           from{" "}
-
           <Link to={`${url}/wedding-catering`} className="link" >weddings</Link>
-
-
-
           , parties, office luncheons, & more.
-        </Info>
+        </CateringInfo>
+
         <Link to="/catering/order-online#delivery">
-          <Button colorBeige>Order catering delivery</Button>
+          <CateringButton colorBeige>Order catering delivery</CateringButton>
         </Link>
         <Link to="/catering/#fullservice">
-          <Button colorBeige>Full service catering</Button>
+          <CateringButton colorBeige>Full service catering</CateringButton>
         </Link>
         <Link to="/catering/#pricing">
-          <Button colorBeige>Menus & Pricing</Button>
+          <CateringButton colorBeige>Menus & Pricing</CateringButton>
         </Link>
         <Link to="/catering/#locations">
-          <Button colorBeige marginBottom="35px">
-            Catering locations
-          </Button>
+          <CateringButton colorBeige >Catering locations</CateringButton>
         </Link>
 
-      </Container>
+      </CateringWrapper>
 
 
       <Container>
         <Image src={team_members} width="100%" height="100%" />
+        <CateringWrapper>
 
-        <Container className="underline--gray" padding="40px 220px 40px 220px">
-          <Header
-            color="#000"
-            fontFamily="PatuaOne"
-            smallLetter
-            fontSize="2.2em">
+          <CateringHeader>
             Full-Service Catering Experience
-          </Header>
+          </CateringHeader>
 
-          <Info
-            fontFamily="PatuaOne"
-            smallLetter
-            color="#000"
-            letterSpacing="1px">
+          <CateringInfo>
             From{" "}
-            <Link to={`${url}/wedding-catering`} className="link">
-              weddings
-            </Link>
-            {" "}
+            <Link to={`${url}/wedding-catering`} className="link">weddings</Link>{" "}
             , receptions, and graduation parties to corporate events, school
             functions, and sporting events,{" "}
             <Link to={`${url}/full-service`} className="link">
@@ -241,38 +126,33 @@ function Catering() {
             or give us a call today at 844-474-8377 so we can learn more about
             your special event and provide our premier catering experience that
             your guests are sure to love.
-          </Info>
+          </CateringInfo>
 
           <Link to="/catering/full-service">
-            <Button marginBottom="30px" colorBeige>
+            <CateringButton colorBeige>
               Learn more
-            </Button>
+            </CateringButton>
           </Link>
-        </Container>
+
+        </CateringWrapper>
       </Container>
+
 
       <Container>
         <Image src={delivery_look} width="100%" height="100%" />
+        <CateringWrapper>
 
-        <Container className="underline--gray" padding="40px 220px 40px 220px">
-          <Header
-            color="#000"
-            fontFamily="PatuaOne"
-            smallLetter
-            fontSize="2.2em">
+          <CateringHeader>
             Menus & Pricing
-          </Header>
+          </CateringHeader>
 
-          <Info
-            fontFamily="PatuaOne"
-            smallLetter
-            color="#000"
-            letterSpacing="1px">
+          <CateringInfo>
             Order the South’s Best BBQ for your next gathering or special event!
             Whether you’re ordering for home or the office, 4 Rivers BBQ
             catering is sure to please all your guests..
             <br />
-            <br />4 Rivers catering offers a variety of{" "}
+            <br />
+            4 Rivers catering offers a variety of{" "}
             <Link to={`${url}/menu`} className="link">
               catering menus
             </Link>{" "}
@@ -298,33 +178,27 @@ function Catering() {
             Have questions? Our expert catering team would be happy to help with
             any questions. You can contact us online or over the phone by
             calling 844-474-8377.
-          </Info>
+          </CateringInfo>
 
           <Link to="/catering/full-service">
-            <Button marginBottom="30px" colorBeige>
+            <CateringButton colorBeige>
               See a catering menu
-            </Button>
+            </CateringButton>
           </Link>
-        </Container>
+
+        </CateringWrapper>
       </Container>
+
 
       <Container>
         <Image src={food_truck} width="100%" height="100%" />
+        <CateringWrapper>
 
-        <Container className="underline--gray" padding="40px 220px 40px 220px">
-          <Header
-            color="#000"
-            fontFamily="PatuaOne"
-            smallLetter
-            fontSize="2.2em">
+          <CateringHeader>
             4 Rivers Catering Locations
-          </Header>
+          </CateringHeader>
 
-          <Info
-            fontFamily="PatuaOne"
-            smallLetter
-            color="#000"
-            letterSpacing="1px">
+          <CateringInfo>
             4 Rivers Catering offers it’s premier catering services to dozens of
             communities across Florida, from Tallahassee to Coral Springs and
             Daytona to Tampa, and everything in between. Whether you’re
@@ -336,32 +210,33 @@ function Catering() {
             You can even host your next event at one of our Smokehouses! Contact
             us online today or call us now so we can chat about reserving a
             private dining space for your next event.
-          </Info>
-        </Container>
+          </CateringInfo>
+
+        </CateringWrapper>
       </Container>
 
-      <div className="catering__locationsWrapper">
+
+      <CateringLocationWrapper>
         {location.map((item) => (
           <Location
             id={item.id}
-            name={item.name}
+            header={item.name}
             address={item.address}
             city={item.city}
             image={item.image}
             btnLabel="Order online"
+            link="http://google.pl"
           />
         ))}
-      </div>
+      </CateringLocationWrapper>
 
-      <Suggestion
-        header="Ready for Dinner ?"
+      <Advertisement
+        header="Ready for Dinner?"
         label="Find a location"
         link="/locations"
       />
 
-
-
-    </div>
+    </CateringContainer>
   );
 }
 

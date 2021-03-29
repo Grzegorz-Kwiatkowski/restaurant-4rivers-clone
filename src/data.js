@@ -19,6 +19,19 @@ import hot_brisket_now_tee from './img/shop/4R-HOT-BRISKET-NOW-TEE.jpg'
 import cap_4r from './img/shop/cap-4r.jpg'
 import the_southern_cowboy_cookbook from './img/shop/THE-SOUTHERN-COWBOY-COOKBOOK.jpg'
 
+import carrollwood from "./img/catering/carrollwood.jpeg";
+import coral_springs from "./img/catering/coral-springs.jpeg";
+import daytona from "./img/catering/daytona.jpeg";
+import gainesville from "./img/catering/gainesville.jpeg";
+import jacksonville from "./img/catering/jacksonville.jpeg";
+import kissimee from "./img/catering/kissimmee.jpeg";
+import longwood from "./img/catering/longwood.jpeg";
+import orange_park from "./img/catering/orange-park.jpeg";
+import south_tampa from "./img/catering/south-tampa.jpeg";
+import tallahassee from "./img/catering/tallahassee.jpeg";
+import east_orlando from "./img/catering/UCF-east-orlando.jpeg";
+import winter_garden from "./img/catering/winter-garden.jpeg";
+import winter_park from "./img/catering/winter-park.jpeg";
 
 const shopProducts = [
     {
@@ -419,7 +432,101 @@ const states =
         }
     ]
 
-export { shopProducts, couponCodes, states }
+const locations = [
+    {
+        id: 1,
+        name: "Carrollwood",
+        address: "14330 N Dale Mabry Hwy",
+        city: "Tampa FL 33618",
+        image: carrollwood,
+    },
+    {
+        id: 2,
+        name: "Coral Springs",
+        address: "2660 North University Drive",
+        city: "Coral Springs FL 33065",
+        image: coral_springs,
+    },
+    {
+        id: 3,
+        name: "Daytona",
+        address: "1866 Victory Cir",
+        city: "Daytona Beach FL 32114",
+        image: daytona,
+    },
+    {
+        id: 4,
+        name: "Gainesville",
+        address: "3262 SW 35th Blvd",
+        city: "Gainesville FL 32608",
+        image: gainesville,
+    },
+    {
+        id: 5,
+        name: "Jacksonville",
+        address: "9220 Baymeadows Road",
+        city: "Jacksonville FL 32256",
+        image: jacksonville,
+    },
+    {
+        id: 6,
+        name: "Kissimmee",
+        address: "874 W Osceola Pkwy",
+        city: "Kissimmee FL 34741",
+        image: kissimee,
+    },
+    {
+        id: 7,
+        name: "Longwood",
+        address: "1869 West State Road 434",
+        city: "Longwood FL 32750",
+        image: longwood,
+    },
+    {
+        id: 8,
+        name: "Orange Park",
+        address: "220 Park Ave",
+        city: "Orange Park FL 32073",
+        image: orange_park,
+    },
+    {
+        id: 9,
+        name: "South Tampa",
+        address: "623 South MacDill Avenue",
+        city: "Tampa FL 33609",
+        image: south_tampa,
+    },
+    {
+        id: 10,
+        name: "Tallahassee",
+        address: "1817 Thomasville Road Ste.100",
+        city: "Tallahassee Florida 32303",
+        image: tallahassee,
+    },
+    {
+        id: 11,
+        name: "UCF-East Orlando",
+        address: "11764 University Blvd",
+        city: "Orlando FL 32817",
+        image: east_orlando,
+    },
+    {
+        id: 12,
+        name: "Winter Garden",
+        address: "1047 South Dillard Street",
+        city: "Winter Garden FL 34787",
+        image: winter_garden,
+    },
+    {
+        id: 13,
+        name: "Winter Park",
+        address: "1600 West Fairbanks Avenue",
+        city: "Winter Park FL 32789",
+        image: winter_park,
+    },
+];
+
+export { shopProducts, couponCodes, states, locations }
 
 
 

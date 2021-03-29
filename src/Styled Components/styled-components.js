@@ -1,40 +1,37 @@
 import styled from "styled-components";
 import { BiWindow } from "react-icons/bi";
 
+
 const Header = styled.h1`
-  color: ${(props) => props.color || "#fff"};
-  font-size: ${(props) => props.fontSize || "3em"};
-  letter-spacing: ${(props) => props.letterSpacing || "3px"};
-  font-family: ${(props) => props.fontFamily || "knockout47"};
-  text-transform: ${(props) => (props.smallLetter ? "none" : "uppercase")};
-  text-align: center;
-  margin-top: ${(props) => props.marginTop || "15px"};
-  margin-bottom: ${(props) => props.marginBottom || "15px"};
-  margin-left: ${(props) => props.marginLeft || "0px"};
-  margin-right: ${(props) => props.marginRight || "0px"};
-  padding-left: ${(props) => props.paddingLeft || "0px"};
-  padding-right: ${(props) => props.paddingRight || "0px"};
-  font-weight: ${(props) => (props.fontBold ? "bold" : "none")};
-  &:hover {
-    color:${props => props.colorHover || ""}
-  }
-  width:fit-content;
+  font-family:knockout47;
+  text-transform:uppercase;
+  font-weight:bold;
+  color:#fff;
 `;
 
 const Info = styled.p`
   font-family: ${(props) => props.fontFamily || "Verlag"};
   font-weight: "bold";
   font-size: ${(props) => props.fontSize || "1.2em"};
-  text-transform: ${(props) => (props.smallLetter ? "none" : "uppercase")};
   text-align: ${props => props.textAlign || "center"};
   color: ${(props) => props.color || "#fff"};
-  margin-top: ${(props) => props.marginTop || "25px"};
-  margin-bottom: ${(props) => props.marginBottom || "25px"};
-  margin-left:${props => props.marginLeft || ""};
   letter-spacing: ${(props) => props.letterSpacing || "5px"};
   padding: ${(props) => props.padding || ""};
+  margin:${(props) => props.margin || ""};
+  text-transform:${props => props.uppercase ? "uppercase" : "none"};
   width:fit-content;
+
+  @media screen and (max-width: 768px) { 
+    font-size:.9rem;  
+  }
+
+    @media screen and (max-width: 480px) { 
+      font-size:.7rem;  
+      letter-spacing:2px;
+  }
 `;
+
+
 
 const Alink = styled.a`
   text-decoration: "none";
@@ -55,31 +52,35 @@ const Button = styled.button`
   transition: 300ms;
   font-family: Verlag;
   border: none;
-  letter-spacing: 4px;
-  width:${props => props.width || ""};
-  height:${props => props.height || ""};
-  margin-bottom: ${(props) => props.marginBottom || "10px"};
-  margin-top: ${(props) => props.marginTop || ""};
-  margin-right: ${(props) => props.marginRight || ""};
+  letter-spacing:2px;
   background-color: ${(props) => (props.colorBeige ? "#886735" : "#ffffff")};
   color: ${(props) => (props.colorBeige ? "#ffffff" : "#886735")};
+  font-size: .7em;
+  padding:12px 26px 12px 26px;
 
-  padding: ${(props) =>
-    props.paddingBigger ? "20px 35px 20px 35px" : "12px 20px 12px 20px"};
-  font-size: ${(props) => (props.fontBig ? ".9em" : ".7em")};
+    &:hover {
+      background-color: ${(props) => props.hoverColorBg || "#8f2626"};
+      color: ${(props) => props.hoverTextColor || "#ffffff"};
+    }  
 
-  &:hover {
-    background-color: ${(props) => props.hoverColorBg || "#8f2626"};
-    color: ${(props) => props.hoverTextColor || "#ffffff"};
+`;
+
+const BigButton = styled(Button)`
+    padding:1rem 1.7rem 1rem 1.7rem;
+
+    @media screen and (max-width: 480px) { 
+      padding:6px 16px 6px 16px;
   }
 `;
+
 
 const Image = styled.img`
   width: ${(props) => props.width || "50%"};
   height: ${(props) => props.height || "50%"};
-  margin-right: ${(props) => props.marginRight || ""};
-  margin-top: ${(props) => props.marginTop || "25px"};
-  margin-bottom: ${(props) => props.marginBottom || "25px"};
+  margin:${props => props.margin || "0 0 0 0"};
+
+    @media screen and (max-width: 480px) { 
+    }
 `;
 
 const Container = styled.div`
@@ -243,6 +244,6 @@ export {
   Header, Info, Alink, Button, Image, Container, CartWrapper, Table, DeleteBtn,
   BoldText, Th, Td, WindowIcon, EmptyCartContainer, EmptyCartWrapper, Wrapper,
   HeaderWrapper, CouponWrapper, CheckoutLink, Input, TextWrapper, FormContainer,
-  FormLeftColumn, FormRightColumn, InputWrapper
+  FormLeftColumn, FormRightColumn, InputWrapper, BigButton
 };
 
