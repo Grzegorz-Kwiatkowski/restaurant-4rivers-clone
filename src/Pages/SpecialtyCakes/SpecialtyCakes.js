@@ -3,12 +3,21 @@ import { Parallax } from "react-parallax";
 import { Link } from 'react-router-dom'
 
 import {
-    Header,
-    Container,
-    Info,
-    Button,
     Image,
 } from "../../Styled Components/styled-components";
+
+import {
+    CakesContainer,
+    CakesParallaxWrapper,
+    CakesParallaxHeader,
+    CakesParallaxInfo,
+    CakesButton,
+    CakesWrapper,
+    CakesHeader,
+    CakesInfo,
+    CakesText
+} from './SpecialtyCakes.elements'
+
 import menu_pdf from '../../Documents/Sweetshop-Catering-Menu.pdf'
 
 import wedding_cakes from '../../img/specialty-cakes/wedding-cakes.jpg'
@@ -17,228 +26,219 @@ import theme_cakes_white from '../../img/specialty-cakes/theme-cakes-white.jpg'
 import themed_cakes_carrot from '../../img/specialty-cakes/themed-cakes-carrot.jpg'
 import cakes_cup_cakes from '../../img/specialty-cakes/cakes-cup-cakes.jpg'
 
+
 function SpecialtyCakes() {
     return (
-        <div className="specialty-cakes">
 
-            <Parallax bgImage={wedding_cakes} strength={250}>
-                <Container
-                    padding="80px"
-                    className="home__sauces"
-                    style={{ height: "100vh" }}
-                >
-                    <Header
-                        className="underline--white"
-                        fontSize="7em"
-                        letterSpacing="12px">
+        <CakesContainer>
+
+            <Parallax
+                bgImage={wedding_cakes}
+                strength={150}
+                bgImageStyle={{ width: "100%", height: "150%" }}
+            >
+                <CakesParallaxWrapper>
+
+                    <CakesParallaxHeader>
                         4R Specialty Cakes
-          </Header>
-                    <Info letterSpacing="1px">
+                    </CakesParallaxHeader>
+
+                    <CakesParallaxInfo>
                         Custom Cakes for Weddings and Special Events
-          </Info>
+                    </CakesParallaxInfo>
 
                     <a href="https://www.4rspecialtycakes.com/contact">
-                        <Button marginTop="10px">Contact us online</Button>
+                        <CakesButton>Contact us online</CakesButton>
                     </a>
 
                     <Link to="/catering/contact-us">
-                        <Button colorBeige>Contact us by phone</Button>
+                        <CakesButton colorBeige>Contact us by phone</CakesButton>
                     </Link>
-                </Container>
+
+                </CakesParallaxWrapper>
+
             </Parallax>
 
 
-            <Container className="underline--gray" padding="40px 220px 40px 220px">
-                <Header color="#000" fontFamily="PatuaOne" smallLetter marginBottom="0px">
+            <CakesWrapper>
+
+                <CakesHeader>
                     4R Specialty Cakes
-        </Header>
-                <Info
-                    fontFamily="PatuaOne"
-                    color="#8F2626"
-                    letterSpacing="1px"
-                    fontSize="1.4em"
-                    marginTop="5px">
+                </CakesHeader>
+
+                <CakesInfo>
                     Custom cakes & desserts by the Sweet Shop at 4 Rivers
-        </Info>
+                </CakesInfo>
 
-                <Info
-                    fontFamily="PatuaOne"
-                    smallLetter
-                    color="#000"
-                    letterSpacing="1px">
-                    From the team behind the 4 Rivers Sweet Shop, 4R Specialty Cakes serves up the sweetest custom desserts for weddings, parties, and special events.<br /><br />
-                    Based out of Winter Park Florida, 4R Specialty Cakes serves custom cakes and desserts to communities all throughout Florida, from Jacksonville to Miami and Daytona to Tampa Bay.<br /><br />
-                    Let our award-winning pastry chefs help you create the perfect custom cake or dessert for your wedding, baby shower, baptism, graduation, birthday, or special event. Tap below for more information.<br /><br />
+                <CakesText>
+                    From the team behind the 4 Rivers Sweet Shop, 4R Specialty Cakes serves
+                    up the sweetest custom desserts for weddings, parties, and special events.
+                        <br /><br />
+                    Based out of Winter Park Florida, 4R Specialty Cakes serves custom cakes
+                    and desserts to communities all throughout Florida, from Jacksonville to Miami
+                    and Daytona to Tampa Bay.
+                        <br /><br />
+                    Let our award-winning pastry chefs help you create the perfect custom cake
+                    or dessert for your wedding, baby shower, baptism, graduation, birthday, or
+                    special event. Tap below for more information.
+                        <br /><br />
+                </CakesText>
 
-                </Info>
 
                 <a href="#wedding-cakes">
-                    <Button colorBeige>Wedding cakes</Button>
-                </a>
-                <a href="#themed-cakes">
-                    <Button colorBeige>Themed cakes</Button>
-                </a>
-                <a href="#signature-cakes">
-                    <Button colorBeige>Signature cakes</Button>
-                </a>
-                <a href="#desserts">
-                    <Button colorBeige marginBottom="35px">Desserts & Confections</Button>
+                    <CakesButton colorBeige>Wedding cakes</CakesButton>
                 </a>
 
-            </Container>
+                <a href="#themed-cakes">
+                    <CakesButton colorBeige>Themed cakes</CakesButton>
+                </a>
+
+                <a href="#signature-cakes">
+                    <CakesButton colorBeige>Signature cakes</CakesButton>
+                </a>
+
+                <a href="#desserts">
+                    <CakesButton colorBeige>Desserts & Confections</CakesButton>
+                </a>
+
+            </CakesWrapper>
+
 
             <Image src={custom_wedding_cake} width="100%" height="100%" />
 
 
+            <CakesWrapper id="wedding-cakes">
 
-            <Container id="wedding-cakes" className="underline--gray" padding="40px 220px 40px 220px" >
-                <Header color="#000" fontFamily="PatuaOne" smallLetter marginBottom="0px" fontSize="2.7em">
+                <CakesHeader>
                     Custom Wedding Cakes
-        </Header>
-                <Info
-                    fontFamily="PatuaOne"
-                    color="#8F2626"
-                    letterSpacing="1px"
-                    fontSize="1.4em"
-                    marginTop="5px">
+                </CakesHeader>
+
+                <CakesInfo>
                     Making Your Sweetest Dreams Come to Life
-        </Info>
+                </CakesInfo>
 
-                <Info
-                    fontFamily="PatuaOne"
-                    smallLetter
-                    color="#000"
-                    letterSpacing="1px">
-                    Who doesn’t love this part of wedding planning?<br /><br />
-                    4R Specialty Cakes is here to help create the perfect customized cake for your wedding. With an extensive list of flavor offerings, fillings, frostings, and serving sizes, our talented pastry chefs can do it all.<br /><br />
-                    Contact our team today to start creating your dream wedding cake that perfectly matches the theme and design of your wedding.<br /><br />
-                </Info>
+                <CakesText>
+                    Who doesn’t love this part of wedding planning?
+                        <br /><br />
+                    4R Specialty Cakes is here to help create the perfect customized cake
+                    for your wedding. With an extensive list of flavor offerings, fillings,
+                    frostings, and serving sizes, our talented pastry chefs can do it all.
+                        <br /><br />
+                    Contact our team today to start creating your dream wedding cake that perfectly
+                    matches the theme and design of your wedding.
+                        <br /><br />
+                </CakesText>
 
                 <Link to="">
-                    <Button colorBeige>Contact us online</Button>
+                    <CakesButton colorBeige>Contact us online</CakesButton>
                 </Link>
                 <Link to="">
-                    <Button colorBeige>Contact us by phone</Button>
+                    <CakesButton colorBeige>Contact us by phone</CakesButton>
                 </Link>
 
-            </Container>
+            </CakesWrapper>
 
 
             <Image src={theme_cakes_white} width="100%" height="100%" />
 
-            <Container id="themed-cakes" className="underline--gray" padding="40px 220px 40px 220px">
-                <Header
-                    color="#000"
-                    fontFamily="PatuaOne"
-                    smallLetter
-                    fontSize="2.2em">
+            <CakesWrapper id="themed-cakes">
+
+                <CakesHeader>
                     Themed Cakes
-  </Header>
+                </CakesHeader>
 
-                <Info
-                    fontFamily="PatuaOne"
-                    color="#8F2626"
-                    letterSpacing="1px"
-                    marginTop="1px"
-                    fontSize="1.4em">
+                <CakesInfo>
                     A beautiful cake for every occasion
-                    </Info>
+                </CakesInfo>
 
-                <Info
-                    fontFamily="PatuaOne"
-                    smallLetter
-                    color="#000"
-                    letterSpacing="1px"
-                >
+                <CakesText>
                     With 4R Specialty Cakes themed cakes, it’s easy to bring any celebration to life.
-                     <br />
                     <br />
-                    From baby showers and graduation parties to baptisms and birthday parties, it’s easy to find the perfect cake for any special gathering.nt.
-                </Info>
+                    <br />
+                    From baby showers and graduation parties to baptisms and birthday parties,
+                    it’s easy to find the perfect cake for any special gathering.nt.
+                </CakesText>
+
                 <a href="https://www.4rspecialtycakes.com/theme-cakes">
-                    <Button colorBeige>See current offerings</Button>
+                    <CakesButton colorBeige>See current offerings</CakesButton>
                 </a>
-            </Container>
+
+            </CakesWrapper>
 
 
             <Image src={themed_cakes_carrot} width="100%" height="100%" />
 
-            <Container id="signature-cakes" className="underline--gray" padding="40px 220px 40px 220px">
-                <Header
-                    color="#000"
-                    fontFamily="PatuaOne"
-                    smallLetter
-                    fontSize="2.2em">
+
+            <CakesWrapper id="signature-cakes" >
+
+                <CakesHeader>
                     Signature Cakes
-</Header>
+                </CakesHeader>
 
-                <Info
-                    fontFamily="PatuaOne"
-                    color="#8F2626"
-                    letterSpacing="1px"
-                    marginTop="1px"
-                    fontSize="1.3em">
+                <CakesInfo>
                     The Cakes You’ve Come to Know and Love from the 4R Sweet Shop
-        </Info>
+                </CakesInfo>
 
-                <Info
-                    fontFamily="PatuaOne"
-                    smallLetter
-                    color="#000"
-                    letterSpacing="1px"
-                >
-                    Our 4R Specialty Cakes team has made some delicious creations over the years in the 4 Rivers Sweet Shop.<br /><br />
-                    From our Quintessential Chocolate Cake to our classic Carrot Cake, our signature cake offerings highlight the best of the best from the 4R Sweet Shop.<br /><br />
-                    Bring one of your Sweet Shop favorites home today by contacting our team. Got a Sweet Shop favorite not listed on our current offerings? We’d be glad to make one special just for you.<br /><br />
-                    Tap below to see our offerings and to contact one of our talented Sweet Shop pastry chefs.<br /><br />
+                <CakesText>
+                    Our 4R Specialty Cakes team has made some delicious creations over the years in the
+                    4 Rivers Sweet Shop.
+                        <br /><br />
+                    From our Quintessential Chocolate Cake to our classic Carrot Cake, our signature cake offerings
+                    highlight the best of the best from the 4R Sweet Shop.
+                        <br /><br />
+                    Bring one of your Sweet Shop favorites home today by contacting our team. Got a Sweet Shop favorite
+                    not listed on our current offerings? We’d be glad to make one special just for you.
+                        <br /><br />
+                    Tap below to see our offerings and to contact one of our talented Sweet Shop pastry chefs.
+                        <br /><br />
+                </CakesText>
 
-                </Info>
                 <a href="https://www.4rspecialtycakes.com/signature-cakes">
-                    <Button colorBeige>See current offerings</Button>
+                    <CakesButton colorBeige>See current offerings</CakesButton>
                 </a>
-            </Container>
+
+            </CakesWrapper>
 
 
             <Image src={cakes_cup_cakes} width="100%" height="100%" />
 
-            <Container id="desserts" className="underline--gray" padding="40px 220px 40px 220px">
-                <Header
-                    color="#000"
-                    fontFamily="PatuaOne"
-                    smallLetter
-                    fontSize="2.2em">
+
+            <CakesWrapper id="desserts">
+
+                <CakesHeader>
                     Custom Desserts & Confections
-</Header>
+                </CakesHeader>
 
-                <Info
-                    fontFamily="PatuaOne"
-                    color="#8F2626"
-                    letterSpacing="1px"
-                    marginTop="1px"
-                    fontSize="1.3em">
+                <CakesInfo>
                     Custom Cupcakes, Cookies, Pies, Dessert Bars, & More
-</Info>
+                </CakesInfo>
 
-                <Info
-                    fontFamily="PatuaOne"
-                    smallLetter
-                    color="#000"
-                    letterSpacing="1px"
-                >
-                    Our team at 4R Specialty Cakes can also create tons of custom confections, beyond cakes, perfect for any gathering.<br />
-           Check out our <a href={menu_pdf} target="_blank" className="link">Sweet Shop Catering Menu</a> to see our full list of dessert packages and offerings, including dessert bars (such as brownies, Bayou bars, and Hello Dolly bars), mini cupcakes, pies, pie shots, pop tarts, dipped Oreos, cake balls, mini cookies, cake shots, and more.<br /><br />
-           Questions? Our expert pastry chefs would be happy to walk you through our extensive list of custom dessert offerings to help make your next special event a little sweeter.<br /><br />
+                <CakesText>
+                    Our team at 4R Specialty Cakes can also create tons of custom confections, beyond
+                    cakes, perfect for any gathering.
+                        <br />
+                    Check out our <a href={menu_pdf} target="_blank" className="link">Sweet
+                    Shop Catering Menu</a> to see our full list of dessert packages and offerings,
+                    including dessert bars (such as brownies, Bayou bars, and Hello Dolly bars),
+                    mini cupcakes, pies, pie shots, pop tarts, dipped Oreos, cake balls, mini cookies,
+                    cake shots, and more.
+                        <br /><br />
+                    Questions? Our expert pastry chefs would be happy to walk you through our
+                    extensive list of custom dessert offerings to help make your next special
+                    event a little sweeter.
+                        <br /><br />
+                </CakesText>
 
-                </Info>
+
                 <a href="https://www.4rspecialtycakes.com/contact">
-                    <Button colorBeige>Contact us online</Button>
+                    <CakesButton colorBeige>Contact us online</CakesButton>
                 </a>
-                <Button colorBeige>Contact us by phone</Button>
 
+                <CakesButton colorBeige>Contact us by phone</CakesButton>
 
-            </Container>
+            </CakesWrapper>
 
-        </div >
+        </CakesContainer >
     )
 }
 
