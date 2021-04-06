@@ -269,13 +269,6 @@ span:after {
     margin: auto 0.5em;
     color: gray;
 }
-.shop__products {
-    display: flex;
-    flex-wrap: wrap;
-    background-image: url('/products-bg.bae4c29c.jpg');
-    background-position: center;
-    background-size: cover;
-}
 .carousel-caption {
     display: flex;
     align-items: center;

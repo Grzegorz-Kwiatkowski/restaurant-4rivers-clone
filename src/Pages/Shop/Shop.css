@@ -1,7 +1,0 @@
-.shop__products {
-    display: flex;
-    flex-wrap: wrap;
-    background-image: url('../../img/shop/products-bg.jpg');
-    background-position: center;
-    background-size: cover;
-}

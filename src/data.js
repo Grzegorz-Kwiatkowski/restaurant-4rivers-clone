@@ -18,6 +18,7 @@ import gift_card from './img/shop/4R-GIFT-CARD.jpg'
 import hot_brisket_now_tee from './img/shop/4R-HOT-BRISKET-NOW-TEE.jpg'
 import cap_4r from './img/shop/cap-4r.jpg'
 import the_southern_cowboy_cookbook from './img/shop/THE-SOUTHERN-COWBOY-COOKBOOK.jpg'
+import BBQRetailFlagShirt from './img/shop/BBQ-Retail-Flag-Shirt.jpg'
 
 import carrollwood from "./img/catering/carrollwood.jpeg";
 import coral_springs from "./img/catering/coral-springs.jpeg";
@@ -62,17 +63,6 @@ const shopProducts = [
     {
         id: 3,
         category: "food&sauces",
-        header: "Bourbon blended vanilla extract",
-        priceInfo: "$19.99",
-        price: 19.99,
-        subtotal: 0,
-        amount: 1,
-        content: "Slip into cakes, cookies, or anything that needs a daring hint of barrel aged bourbon and vanilla!",
-        image: [bourbon_blended_1, bourbon_blended_2]
-    },
-    {
-        id: 4,
-        category: "food&sauces",
         header: "Brisket rub",
         priceInfo: "$10.95",
         price: 10.95,
@@ -82,7 +72,7 @@ const shopProducts = [
         image: brisket_rub_1
     },
     {
-        id: 5,
+        id: 4,
         category: "food&sauces",
         header: "Coffee rub",
         priceInfo: "$10.95",
@@ -93,7 +83,7 @@ const shopProducts = [
         image: coffee_rub_1
     },
     {
-        id: 6,
+        id: 5,
         category: "food&sauces",
         header: "Hot barbecue sauce",
         priceInfo: "$10.95",
@@ -104,7 +94,7 @@ const shopProducts = [
         image: hot_barbecue_sauce_1
     },
     {
-        id: 7,
+        id: 6,
         category: "food&sauces",
         header: "Maple bourbon syrup",
         priceInfo: "$8.99 - $15.99",
@@ -115,7 +105,7 @@ const shopProducts = [
         image: [maple_bourbon_syrup_1, maple_bourbon_syrup_2]
     },
     {
-        id: 8,
+        id: 7,
         category: "food&sauces",
         header: "Mustard barbecue sauce",
         priceInfo: "$10.95",
@@ -126,7 +116,7 @@ const shopProducts = [
         image: mustard_barbecue_sauce_1
     },
     {
-        id: 9,
+        id: 8,
         category: "food&sauces",
         header: "Pitmaster kit",
         priceInfo: "$59.95",
@@ -137,7 +127,7 @@ const shopProducts = [
         image: [pitmaster_kit_1, pitmaster_kit_2]
     },
     {
-        id: 10,
+        id: 9,
         category: "food&sauces",
         header: "Signature barbecue sauce",
         priceInfo: "$10.95",
@@ -148,7 +138,7 @@ const shopProducts = [
         image: signature_barbecue_sauce_1
     },
     {
-        id: 11,
+        id: 10,
         category: "retail",
         header: "4R gift card",
         priceInfo: "$10.00 - $100.00",
@@ -159,7 +149,7 @@ const shopProducts = [
         image: gift_card
     },
     {
-        id: 12,
+        id: 11,
         category: "retail",
         header: "4R hot brisket now tee",
         priceInfo: "$15.00",
@@ -170,7 +160,7 @@ const shopProducts = [
         image: hot_brisket_now_tee
     },
     {
-        id: 13,
+        id: 12,
         category: "retail",
         header: "Smokehouse",
         priceInfo: "$10.00",
@@ -181,7 +171,7 @@ const shopProducts = [
         image: cap_4r
     },
     {
-        id: 14,
+        id: 13,
         category: "retail",
         header: "The Southern cowboy cookbook",
         priceInfo: "$28.99",
@@ -190,6 +180,17 @@ const shopProducts = [
         amount: 1,
         content: "In the Southern Cowboy Cookbook, Chef John Rivers combines the region’s most beloved culinary influences to create a fresh new take on comfort food. With his bold blending of Deep-South specialties, traditional Texas BBQ, and Low Country cuisine, the founder and pitmaster of the acclaimed 4 Rivers Smokehouse shares his secrets for dishes that range from the iconic – Smoked Brisket, Pulled Pork, St. Louis Ribs, Red Velvet Cake – to more contemporary favorites like Shrimp ‘n Grits, Grilled Brisket Pizza, Coffee-Rubbed Ribeye, and Bourbon Pecan Pie. With dozens of easy and approachable recipes, 150-plus photographs, skillful techniques, and down-home charm, The Southern Cowboy Cookbook is designed to be a kitchen classic.",
         image: the_southern_cowboy_cookbook
+    },
+    {
+        id: 14,
+        category: "retail",
+        header: "4R RED , WHITE, & QUE TEE",
+        priceInfo: "$15.00",
+        price: 15.00,
+        subtotal: 0,
+        amount: 1,
+        content: "",
+        image: BBQRetailFlagShirt
     }
 ];
 
