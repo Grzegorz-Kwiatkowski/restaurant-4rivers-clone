@@ -1,35 +1,57 @@
 import React from 'react'
 import { Parallax } from "react-parallax";
 
-import './MissedVisit.css'
-import { Container, Header, Info, Image } from '../../Styled Components/styled-components'
-import ContactForm from '../../components/ContactForm'
+import {
+    MissedVisitContainer,
+    MissedVisitWrapper,
+    MissedVisitHeader,
+    MissedVisitInfo,
+    MissedVisitImage
+} from './MissedVisit.elements'
+
+import ContactForm from '../../components/ContactForm/ContactForm'
 
 import parallax_bg from '../../img/missed-visit/parallax-bg.jpg'
 import card_info from '../../img/missed-visit/card-info.jpg'
 
 function MissedVisit() {
-    const beerURL = "https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/56ec2ba9ebc2e3d12c0f";
+    // const beerURL = "https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/56ec2ba9ebc2e3d12c0f";
 
-    fetch(beerURL)
-        .then(response => response.json())
-        .then(data => console.log(data))
+    // fetch(beerURL)
+    //     .then(response => response.json())
+    //     .then(data => console.log(data))
 
     return (
-        <div className="missed-visit">
+        <MissedVisitContainer>
 
-            <Parallax bgImage={parallax_bg} strength={350}>
-                <Container padding="50px">
-                    <Header fontSize="5.5em" letterSpacing="7px" >Add a visit</Header>
-                </Container>
+            <Parallax
+                bgImage={parallax_bg}
+                strength={150}
+                bgImageStyle={{ width: "100%", height: "150%" }}>
+
+                <MissedVisitWrapper>
+
+                    <MissedVisitHeader>
+                        Add a visit
+                    </MissedVisitHeader>
+
+                </MissedVisitWrapper>
+
             </Parallax>
 
-            <Container padding="50px">
-                <Info color="#000" fontSize="1.3em" letterSpacing="1px" smallLetter>If you forgot to swipe your card on a visit, fill out this form for your points to be added to your account.</Info>
-                <Image src={card_info} width="40%" />
+            <MissedVisitWrapper>
+
+                <MissedVisitInfo>
+                    If you forgot to swipe your card on a visit, fill out this
+                    form for your points to be added to your account.
+                </MissedVisitInfo>
+
+                <MissedVisitImage src={card_info} />
                 <ContactForm />
-            </Container>
-        </div>
+
+            </MissedVisitWrapper>
+
+        </MissedVisitContainer>
     )
 }
 

@@ -3,18 +3,26 @@ import { Parallax } from "react-parallax";
 import { Link } from 'react-router-dom'
 
 import {
-    Header,
-    Container,
-    Info,
-    Button
-} from "../../Styled Components/styled-components";
-import './Faq.css'
+    FaqContainer,
+    FaqParallaxWrapper,
+    FaqParallaxHeader,
+    FaqWrapper,
+    FaqSectionUnderline,
+    FaqSection,
+    FaqHeader,
+    FaqTitle,
+    FaqText,
+    FaqList,
+    FaqListItem,
+    FaqLink
+} from './Faq.elements';
+
 
 import catering_menu from '../../Documents/4R-Full-Service-Catering-Menu.pdf'
 import allergen_list from '../../Documents/4R-Menu-Allergen-List.pdf'
 import reheating_instructions from "../../Documents/Holiday-Reheating-Instructions.pdf"
 
-import Suggestion from '../../components/Suggestion'
+import Advertisement from '../../components/Advertisement/Advertisement'
 
 import bg_faq from '../../img/faq/bg_faq.jpg'
 
@@ -22,139 +30,300 @@ import bg_faq from '../../img/faq/bg_faq.jpg'
 
 function Faq() {
     return (
-        <div className="faq">
+        <FaqContainer>
 
-            <Parallax bgImage={bg_faq} strength={350}>
-                <Container padding="40px">
-                    <Header
-                        fontSize="6em"
-                        letterSpacing="12px">
+            <Parallax
+                bgImage={bg_faq}
+                strength={150}
+                bgImageStyle={{ width: "100%", height: "150%" }}
+            >
+                <FaqParallaxWrapper>
+
+                    <FaqParallaxHeader>
                         FAQ
-                    </Header>
-                </Container>
+                    </FaqParallaxHeader>
+
+                </FaqParallaxWrapper>
+
             </Parallax >
 
 
-            <Container>
+            <FaqWrapper>
 
-                <section className="faq__section underline--gray">
-                    <Header color="#000" fontFamily="PatuaOne" >4Rewards FAQs</Header>
-                    <h2>How did my visits transfer from the Pitmaster Loyalty Program to the 4Rewards Loyalty Program?</h2>
-                    <p>For every visit in our previous loyalty system, we allocated 10 points in our new 4Rewards Loyalty Program. For example: If you accumulated 5 visits in our Pitmaster Rewards Program, we automatically transferred 50 points into your new 4Rewards account.</p>
+                <FaqSectionUnderline>
 
-                    <h2>Who do I contact if I have questions about my 4Rewards Loyalty account? </h2>
-                    <p>For questions regarding your 4Rewards Loyalty account, please email us at:</p>
+                    <FaqHeader>
+                        4Rewards FAQs
+                    </FaqHeader>
 
-                    <ul>
-                        <li><a href="" className="linkUp">4rewards@4rsmokehouse.com</a></li>
-                    </ul>
-                </section>
+                    <FaqTitle>
+                        How did my visits transfer from the Pitmaster Loyalty Program
+                        to the 4Rewards Loyalty Program?
+                    </FaqTitle>
 
-                <section className="faq__section underline--gray">
-                    <Header color="#000" fontFamily="PatuaOne" >Dining</Header>
+                    <FaqText>
+                        For every visit in our previous loyalty system, we allocated 10
+                        points in our new 4Rewards Loyalty Program. For example: If you
+                        accumulated 5 visits in our Pitmaster Rewards Program, we automatically
+                        transferred 50 points into your new 4Rewards account.
+                    </FaqText>
 
-                    <h2>What are your hours? </h2>
-                    <p>We are open Monday through Saturday 11am – 8pm. We are usually ready to serve those that come a little early and we never have a hard closing time.</p>
+                    <FaqTitle>
+                        Who do I contact if I have questions about my 4Rewards Loyalty account?
+                    </FaqTitle>
 
-                    <h2>Are you a full service restaurant and do you take reservations?</h2>
-                    <p>We are a fast-casual dining establishment, and we do not take reservations. But would be happy to accommodate large parties with advance notice by calling 844-4RIVERS.</p>
+                    <FaqText>
+                        For questions regarding your 4Rewards Loyalty account, please
+                        email us at:
+                    </FaqText>
 
-                    <h2>Do you have private rooms available?</h2>
-                    <p>Our restaurants are set up with communal picnic tables and family-style seating. We do not have private rooms at our Smokehouses but do welcome large groups to dine with us. Additionally, we have many options available through our Catering Department if you’re looking for something more private.</p>
+                    <FaqList>
+                        <FaqListItem>
+                            <FaqLink href="">
+                                4rewards@4rsmokehouse.com
+                            </FaqLink>
+                        </FaqListItem>
+                    </FaqList>
 
-                    <h2>Why are you closed on Sundays?</h2>
-                    <p>4 Rivers is a family-owned faith based restaurant and we feel Sundays are a day for family and worship.</p>
+                </FaqSectionUnderline>
 
-                    <h2>What are your Holiday Hours?</h2>
-                    <p>
 
+                <FaqSectionUnderline>
+
+                    <FaqHeader>
+                        Dining
+                    </FaqHeader>
+
+                    <FaqTitle>
+                        What are your hours?
+                    </FaqTitle>
+
+                    <FaqText>
+                        We are open Monday through Saturday 11am – 8pm. We are usually
+                        ready to serve those that come a little early and we never have
+                        a hard closing time.
+                    </FaqText>
+
+
+                    <FaqTitle>
+                        Are you a full service restaurant and do you take reservations?
+                    </FaqTitle>
+
+                    <FaqText>
+                        We are a fast-casual dining establishment, and we do not take reservations.
+                        But would be happy to accommodate large parties with advance notice by
+                        calling 844-4RIVERS.
+                    </FaqText>
+
+
+                    <FaqTitle>
+                        Do you have private rooms available?
+                    </FaqTitle>
+
+                    <FaqText>
+                        Our restaurants are set up with communal picnic tables and family-style
+                        seating. We do not have private rooms at our Smokehouses but do welcome
+                        large groups to dine with us. Additionally, we have many options available
+                        through our Catering Department if you’re looking for something more private.
+                    </FaqText>
+
+
+                    <FaqTitle>
+                        Why are you closed on Sundays?
+                    </FaqTitle>
+
+                    <FaqText>
+                        4 Rivers is a family-owned faith based restaurant and we feel Sundays
+                        are a day for family and worship.
+                    </FaqText>
+
+
+                    <FaqTitle>
+                        What are your Holiday Hours?
+                    </FaqTitle>
+
+                    <FaqText>
                         We are closed on the following holidays:
                         <br />
                         -New Year’s Day
                         <br />
                         -Thanksgiving
                         <br />
-                        -Christmas Eve (After 5 p.m.)
+                        -Christmas Eve (After 5 FaqText.m.)
                         <br />
                         -Christmas Day
-                    </p>
-                </section>
+                    </FaqText>
+
+                </FaqSectionUnderline>
 
 
-                <section className="faq__section underline--gray">
-                    <Header color="#000" fontFamily="PatuaOne" >Carry-Out & Delivery</Header>
-                    <h2>Do you deliver?</h2>
-                    <p>We provide delivery services through our Catering Department. You can view our catering menu online. For catering orders, please feel free to call 321-972-1888 or 1-855-368-7748 (ext 3).</p>
+                <FaqSectionUnderline>
 
-                    <ul>
-                        <li><a href={catering_menu} target="_blank" className="linkUp">View our catering menu</a></li>
-                    </ul>
+                    <FaqHeader>
+                        Carry-Out & Delivery
+                    </FaqHeader>
 
-                    <p>Delivery is also available through UberEats, BiteSquad, Amazon Restaurants, and DoorDash
-                        *Delivery service varies by location</p>
-                </section>
+                    <FaqTitle>
+                        Do you deliver?
+                    </FaqTitle>
 
+                    <FaqText>
+                        We provide delivery services through our Catering Department.
+                        You can view our catering menu online. For catering orders,
+                        please feel free to call 321-972-1888 or 1-855-368-7748 (ext 3).
+                    </FaqText>
 
-                <section className="faq__section underline--gray">
-                    <Header color="#000" fontFamily="PatuaOne" >Our Food</Header>
+                    <FaqList>
+                        <FaqListItem>
+                            <FaqLink href={catering_menu} target="_blank">
+                                View our catering menu
+                            </FaqLink>
+                        </FaqListItem>
+                    </FaqList>
 
-                    <h2>Is your sauce gluten-free?</h2>
-                    <p>Yes, our sauce is a gluten-free product. We do offer allergen information for all of our food, which is available through our menu.</p>
+                    <FaqText>
+                        Delivery is also available through UberEats, BiteSquad, Amazon Restaurants,
+                        and DoorDash
+                        *Delivery service varies by location
+                    </FaqText>
 
-                    <h2>Do you sell your BBQ sauces?</h2>
-                    <p>Yes, we do. Our sauces are available for purchase at all Smokehouse locations and online.</p>
-
-                    <ul>
-                        <li><a href={catering_menu} target="_blank" className="linkUp">View our online store</a></li>
-                    </ul>
-
-                    <h2>Do you have nutritional information?</h2>
-                    <p>We do not have nutritional information for our menu items. We do however offer allergen information which is available through our menu.</p>
-
-                    <ul>
-                        <li><a href={allergen_list} target="_blank" className="linkUp">View our allergen list</a></li>
-                    </ul>
-
-                    <h2>Do you have reheating instructions?</h2>
-                    <p>Yes, we do. A full list of reheating instructions is available through our menu.</p>
-
-                    <ul>
-                        <li><a href={reheating_instructions} target="_blank" className="linkUp">View our reheating instructions</a></li>
-                    </ul>
-                </section>
+                </FaqSectionUnderline>
 
 
-                <section className="faq__section ">
-                    <Header color="#000" fontFamily="PatuaOne" >Our Company</Header>
+                <FaqSectionUnderline>
 
-                    <h2>Do you franchise?</h2>
-                    <p>We are a family-owned company and do not have intentions of franchising.</p>
+                    <FaqHeader>
+                        Our Food
+                    </FaqHeader>
 
-                    <h2>Does 4 Rivers offer donations?</h2>
-                    <p>Yes, we do. Please contact our Donations Coordinator using our donation form.</p>
+                    <FaqTitle>
+                        Is your sauce gluten-free?
+                    </FaqTitle>
 
-                    <ul>
-                        <li><Link to="/donation" className="linkUp">Contact us for donations</Link></li>
-                    </ul>
+                    <FaqText>
+                        Yes, our sauce is a gluten-free product. We do offer allergen information
+                        for all of our food, which is available through our menu.
+                    </FaqText>
 
-                    <h2>What is the best way to contact 4 Rivers?</h2>
-                    <p>Please contact us through our contact form.<br /><br />
-                    For all media and press inquiries please contact Bo Morris of </p><br />
 
-                    <ul>
-                        <li><a href="https://story-farm.com/" className="linkUp">Story farm</a></li>
-                    </ul>
-                    <p>at bomorris@story-farm.com</p>
+                    <FaqTitle>
+                        Do you sell your BBQ sauces?
+                    </FaqTitle>
 
-                    <ul>
-                        <li><Link to="/contact" className="linkUp">Contact us</Link></li>
-                    </ul>
-                </section>
+                    <FaqText>
+                        Yes, we do. Our sauces are available for purchase at all Smokehouse
+                        locations and online.
+                    </FaqText>
 
-            </Container>
+                    <FaqList>
+                        <FaqListItem>
+                            <FaqLink href={catering_menu} target="_blank">
+                                View our online store
+                            </FaqLink>
+                        </FaqListItem>
+                    </FaqList>
 
-            <Suggestion header="Still have Questions ?" label="contact us" link="/contact" />
-        </div >
+                    <FaqTitle>
+                        Do you have nutritional information?
+                    </FaqTitle>
+
+                    <FaqText>
+                        We do not have nutritional information for our menu items. We do
+                        however offer allergen information which is available through our menu.
+                    </FaqText>
+
+                    <FaqList>
+                        <FaqListItem>
+                            <FaqLink href={allergen_list} target="_blank">
+                                View our allergen list
+                            </FaqLink>
+                        </FaqListItem>
+                    </FaqList>
+
+                    <FaqTitle>
+                        Do you have reheating instructions?
+                    </FaqTitle>
+
+                    <FaqText>
+                        Yes, we do. A full list of reheating instructions is available through
+                        our menu.
+                    </FaqText>
+
+                    <FaqList>
+                        <FaqListItem>
+                            <FaqLink href={reheating_instructions} target="_blank">
+                                View our reheating instructions
+                            </FaqLink>
+                        </FaqListItem>
+                    </FaqList>
+
+                </FaqSectionUnderline>
+
+
+                <FaqSection>
+
+                    <FaqHeader>
+                        Our Company
+                    </FaqHeader>
+
+                    <FaqTitle>
+                        Do you franchise?
+                    </FaqTitle>
+
+                    <FaqText>
+                        We are a family-owned company and do not have intentions of franchising.
+                    </FaqText>
+
+
+                    <FaqTitle>
+                        Does 4 Rivers offer donations?
+                    </FaqTitle>
+
+                    <FaqText>
+                        Yes, we do. Please contact our Donations Coordinator using our donation form.
+                    </FaqText>
+
+                    <FaqList>
+                        <FaqListItem><Link to="/donation" className="linkUp">Contact us for donations</Link></FaqListItem>
+                    </FaqList>
+
+                    <FaqTitle>
+                        What is the best way to contact 4 Rivers?
+                    </FaqTitle>
+
+                    <FaqText>
+                        Please contact us through our contact form.<br /><br />
+                        For all media and press inquiries please contact Bo Morris of
+                    </FaqText><br />
+
+                    <FaqList>
+                        <FaqListItem>
+                            <FaqLink href="https://story-farm.com/">
+                                Story farm
+                            </FaqLink>
+                        </FaqListItem>
+                    </FaqList>
+
+                    <FaqText>
+                        at bomorris@story-farm.com
+                    </FaqText>
+
+                    <FaqList>
+                        <FaqListItem>
+                            <Link to="/contact">
+                                Contact us
+                            </Link>
+                        </FaqListItem>
+                    </FaqList>
+
+                </FaqSection>
+
+
+            </FaqWrapper>
+
+            <Advertisement header="Still have Questions ?" label="contact us" link="/contact" />
+
+        </FaqContainer >
     )
 }
 

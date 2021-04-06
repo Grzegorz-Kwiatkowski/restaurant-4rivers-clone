@@ -32,6 +32,9 @@ import tallahassee from "./img/catering/tallahassee.jpeg";
 import east_orlando from "./img/catering/UCF-east-orlando.jpeg";
 import winter_garden from "./img/catering/winter-garden.jpeg";
 import winter_park from "./img/catering/winter-park.jpeg";
+import ribs_2 from './img/gift-cards/ribs-2.jpeg';
+import gift_card_2 from './img/gift-cards/gift-card.jpeg';
+import fried_meat from './img/gift-cards/fried-meat.jpeg';
 
 const shopProducts = [
     {
@@ -526,7 +529,32 @@ const locations = [
     },
 ];
 
-export { shopProducts, couponCodes, states, locations }
+const gifts = [
+    {
+        id: 1,
+        header: "Purchase e-gift card",
+        info: "Order a gift card online and email it quickly and easily to your friend or loved one.",
+        image: ribs_2,
+        btnLabel: "Purchase e-gift card",
+
+    },
+    {
+        id: 2,
+        header: "Purchase gift card",
+        info: "Mail a 4Rivers Gift Card to a family member or friend. ",
+        image: gift_card_2,
+        btnLabel: "Purchase gift card"
+    },
+    {
+        id: 3,
+        header: "Check your balance",
+        info: "Use your card number to check the balance on your 4Rivers Gift Card. If your card is showing as  'Invalid Card Number' please, contact us via email.",
+        image: fried_meat,
+        btnLabel: "Check your balance"
+    }
+];
+
+export { shopProducts, couponCodes, states, locations, gifts }
 
 
 
