@@ -23,6 +23,11 @@
   src: local("ArchivoBlack"), url("./font/ArchivoBlack.ttf") format("opentype");
 }
 
+@font-face {
+  font-family: "Courgette";
+  src: local("Courgette"), url("./font/Courgette.ttf") format("opentype");
+}
+
 .underline--white::after {
   content: "";
   /* This is necessary for the pseudo element to work. */

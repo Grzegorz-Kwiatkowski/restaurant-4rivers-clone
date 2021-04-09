@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Header, Container } from '../../Styled Components/styled-components'
-import circle_icon from '../../icons/times-circle-regular.svg'
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
-import './AccordionSection.css'
+
+import {
+    AccordionSectionContainer,
+    AccordionSectionWrapper,
+    AccordionSectionWhiteBackground,
+    AccordionSectionLabel,
+    AccordionSectionIconWrapper,
+    AccordionSectionIcon,
+    AccordionSectionContent
+} from './AccordionSection.elements'
+
+
 
 class AccordionSection extends Component {
     static propTypes = {
@@ -17,33 +25,42 @@ class AccordionSection extends Component {
         this.props.onClick(this.props.label);
     };
 
+
     render() {
         const {
             onClick,
             props: { isOpen, label, background },
         } = this;
 
+        const IconStyle = {
+            fontSize: 50,
+            fontWeight: "none",
+            color: "lightgray"
+        }
+
         return (
-            <div>
-                <div style={{ backgroundImage: `url(${background})` }} onClick={onClick}
-                    className={isOpen ? "accordion-section freezeHeader" : "accordion-section"}>
+            <AccordionSectionContainer>
 
-                    <div className={isOpen ? "accordion-section__whiteBackground disableWhiteBg" : "accordion-section__whiteBackground"}></div>
-                    <h1 className="accordion-section__label">{label}</h1>
-                    <div className="accordion-section__icon " >
-                        <AddCircleOutlineIcon style={{ fontSize: 50, fontWeight: "none" }} className={isOpen ? "circle__icon rotateRight" : "circle__icon rotateLeft"} />
-                    </div>
+                <AccordionSectionWrapper background={background} isOpen={isOpen} onClick={onClick}>
 
+                    <AccordionSectionWhiteBackground isOpen={isOpen} />
 
-                </div >
+                    <AccordionSectionLabel isOpen={isOpen}>
+                        {label}
+                    </AccordionSectionLabel>
 
-                <div className={isOpen ? "accordion-section__content opened" : "accordion-section__content closed"}>
+                    <AccordionSectionIconWrapper >
+                        <AccordionSectionIcon isOpen={isOpen} style={IconStyle} />
+                    </AccordionSectionIconWrapper>
+
+                </AccordionSectionWrapper>
+
+                <AccordionSectionContent isOpen={isOpen}>
                     {this.props.children}
+                </AccordionSectionContent>
 
-                </div>
 
-
-            </div>
+            </AccordionSectionContainer>
         );
     }
 }

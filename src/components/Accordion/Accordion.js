@@ -10,6 +10,7 @@ class Accordion extends Component {
     };
 
     constructor(props) {
+
         super(props);
 
         const openSections = {};
@@ -24,10 +25,7 @@ class Accordion extends Component {
     }
 
     onClick = label => {
-        const {
-            props: { allowMultipleOpen },
-            state: { openSections },
-        } = this;
+        const { props: { allowMultipleOpen }, state: { openSections } } = this;
 
         const isOpen = !!openSections[label];
 
@@ -48,14 +46,10 @@ class Accordion extends Component {
     };
 
     render() {
-        const {
-            onClick,
-            props: { children },
-            state: { openSections },
-        } = this;
+        const { onClick, props: { children }, state: { openSections } } = this;
 
         return (
-            <div>
+            <>
                 {children.map(child => (
                     <AccordionSection
                         isOpen={!!openSections[child.props.label]}
@@ -66,7 +60,7 @@ class Accordion extends Component {
                         {child.props.children}
                     </AccordionSection>
                 ))}
-            </div>
+            </>
         );
     }
 }
