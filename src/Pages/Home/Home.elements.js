@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { Container, BigButton, Header, Image } from '../../Styled Components/styled-components'
 
 export const HomeContainer = styled.div`
-
 `;
 
 export const HomeCarousel = styled.div`

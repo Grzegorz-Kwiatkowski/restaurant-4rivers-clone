@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from 'history'
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import Home from "./Pages/Home/Home";
 import Catering from "./Pages/Catering/Catering";
 import GiftCard from "./Pages/GiftCard/GiftCard";
@@ -18,20 +18,20 @@ import Donation from './Pages/Loyalty/Donation'
 import MainMenu from './Pages/MainMenu/MainMenu'
 import MissedVisit from './Pages/Loyalty/MissedVisit'
 import Shop from './Pages/Shop/Shop'
-import Product from './components/Product'
+import SelectedProduct from './components/Product/SelectedProduct'
 import OrderOnlineModal from './components/OrderOnlineModal'
 import Cart from './Pages/Cart/Cart'
 import Checkout from "./Pages/Cart/Checkout";
 import CheckoutProvider from './Pages/Cart/CheckoutProvider'
 
 import "./App.css";
-import './ss.scss'
 import PaymentSuccesfull from "./Pages/Cart/PaymentSuccesfull";
 
 
 const history = createBrowserHistory()
 
 class App extends Component {
+
 
   render() {
 
@@ -83,7 +83,7 @@ class App extends Component {
                 <>
 
                   <Route path={`${url}/`} component={Shop} exact />
-                  <Route path={`${url}/:id`} component={Product} />
+                  <Route path={`${url}/:id`} component={SelectedProduct} />
 
                 </>
               )}

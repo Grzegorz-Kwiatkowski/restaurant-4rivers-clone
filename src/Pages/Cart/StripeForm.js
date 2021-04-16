@@ -1,18 +1,34 @@
 import React, { useState, useContext } from 'react'
-import { Link } from 'react-router-dom'
-import "../../ss.scss"
+import axios from 'axios'
+
 import {
     CardNumberElement,
     CardExpiryElement,
     CardCVCElement,
     injectStripe
 } from 'react-stripe-elements'
-import axios from 'axios'
+
+import {
+    StripeFormContainer,
+    StripeFormFieldWrapper,
+    StripeFormFieldsWrapper,
+    StripeFormLabel,
+    StripeFormButton,
+    StripeFormWrapper,
+    StripeFormTitleWrapper,
+    StripeFormTitle,
+    StripeFormImage,
+    StripeFormButtonWrapper,
+    StripeCardNumberElement,
+    StripeCardExpiryElement,
+    StripeCardCVCElement
+} from './StripeForm.elements'
+
 
 import { MainContext } from '../../Contexts/Contexts'
 import PaymentSuccesfull from './PaymentSuccesfull'
 
-
+import creditCardsImg from '../../img/another/creditcards.png'
 
 
 const StripeForm = ({ stripe, history }) => {
@@ -40,39 +56,65 @@ const StripeForm = ({ stripe, history }) => {
     }
 
     if (receiptUrl) {
+        console.log("ReceiptUrl : ")
+        console.log(receiptUrl);
         return (
             <PaymentSuccesfull url={receiptUrl} />
         )
     }
 
     return (
-        <div>
-            <p>Total : {context.total}</p>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Card details
-          <CardNumberElement />
-                </label>
-                <br />
-                <label>
-                    Expiration date
-          <CardExpiryElement />
-                </label>
-                <br />
-                <label>
-                    CVC
-          <CardCVCElement />
-                </label>
-                <br />
-                <button type="submit" onClick={() => context.setPaymentSuccess(true)}>
-                    Pay
-        </button>
+        <StripeFormContainer>
 
-            </form>
+            <StripeFormTitleWrapper>
+                <StripeFormTitle>
+                    Credit Card
+            </StripeFormTitle>
+                <StripeFormImage src={creditCardsImg} />
+            </StripeFormTitleWrapper>
+
+            <StripeFormWrapper>
+
+                <form onSubmit={handleSubmit}>
+                    <StripeFormFieldWrapper>
+
+                        <StripeFormLabel>Card Number </StripeFormLabel>
+                        <StripeCardNumberElement placeholder="**** **** **** **** " />
+
+                    </StripeFormFieldWrapper>
 
 
+                    <StripeFormFieldsWrapper>
 
-        </div >
+                        <StripeFormFieldWrapper>
+
+                            <StripeFormLabel>Expiration (MM/YY)</StripeFormLabel>
+                            <StripeCardExpiryElement />
+
+                        </StripeFormFieldWrapper>
+
+                        <StripeFormFieldWrapper>
+
+                            <StripeFormLabel>Card Security Code </StripeFormLabel>
+                            <StripeCardCVCElement />
+
+                        </StripeFormFieldWrapper>
+
+                    </StripeFormFieldsWrapper>
+                </form>
+
+            </StripeFormWrapper>
+
+            <StripeFormButtonWrapper>
+                <StripeFormButton colorBeige
+                    type="submit"
+                    onClick={() => context.setPaymentSuccess(true)}>
+                    Place order
+                </StripeFormButton>
+            </StripeFormButtonWrapper>
+
+
+        </StripeFormContainer>
     )
 
 }

@@ -20,6 +20,7 @@ export const ProductHeader = styled(Header)`
     letter-spacing:3px;
     font-family:Verlag;
     font-size:1.5rem;
+   
 
          @media screen and (max-width: 1024px) {
            top: 25%;  

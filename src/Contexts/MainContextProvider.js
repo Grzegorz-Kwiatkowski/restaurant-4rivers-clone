@@ -2,12 +2,38 @@ import React, { Component, useState } from 'react'
 import { MainContext } from './Contexts'
 import { shopProducts, couponCodes, states } from '../data'
 
+import bbq_sauce_variety_pack_1 from '../img/shop/BBQ-SAUCE-VARIETY-PACK-1.jpg'
+import bbq_sauce_variety_pack_2 from '../img/shop/BBQ-SAUCE-VARIETY-PACK-2.jpg'
+import all_purpose_rub_1 from '../img/shop/ALL-PURPOSE-RUB-1.jpg'
 
 class MainContextProvider extends Component {
 
     state = {
         isOpenOrderOnline: false,
-        addedToBasket: [],
+        addedToBasket: [
+            // {
+            //     id: 1,
+            //     category: "food&sauces",
+            //     header: "4 Rivers bbq sauce variety pack",
+            //     priceInfo: " $28.95",
+            //     price: 28.95,
+            //     subtotal: 0,
+            //     amount: 1,
+            //     content: "The 4 Rivers BBQ Sauce Variety Pack includes three 16 fl. oz. bottles of each 4 RiversSmokehouse BBQ sauces. The variety pack includes 1 4R Signature BBQ Sauce, 1 Hot BBQ Sauce, and 1 Mustard Sauce. Buy it now on Amazon!",
+            //     image: [bbq_sauce_variety_pack_1, bbq_sauce_variety_pack_2]
+            // },
+            // {
+            //     id: 2,
+            //     category: "food&sauces",
+            //     header: "All purpose rub",
+            //     priceInfo: "$10.95",
+            //     price: 10.95,
+            //     subtotal: 0,
+            //     amount: 1,
+            //     content: "4 RIVERS SIGNATURE TASTE – Like all of our rubs, the founder, John Rivers, personally blended the 4R All Purpose Rub to bring together the favorite flavors of the South. His multi-regional recipe gives a creative blend of sweet and salty with a savory touch perfect for pork and poultry. No matter your method – roasting, slow-cooking, or grilling – 4R All Purpose Rub is engineered to bring out the best in your food.",
+            //     image: all_purpose_rub_1
+            // },
+        ],
         isCouponActive: false,
         allProducts: shopProducts,
         allCouponCodes: couponCodes,

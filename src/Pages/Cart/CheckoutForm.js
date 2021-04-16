@@ -1,15 +1,26 @@
 import React, { useContext, useState } from 'react'
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Formik, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 import { MainContext } from '../../Contexts/Contexts'
 
 import YourOrder from './YourOrder'
-import { FormContainer, FormLeftColumn, FormRightColumn, InputWrapper, Header } from '../../Styled Components/styled-components';
+
+import {
+    CheckoutFormContainer,
+    CheckoutFormLeftSide,
+    CheckoutFormRightSide,
+    CheckoutFormFieldWrapper,
+    CheckoutFormLabel,
+    CheckoutFormField,
+    CheckoutFormHeader,
+    CheckoutFormInfo
+} from './CheckoutForm.elements'
+import { TrendingUpOutlined } from '@material-ui/icons';
 
 
 function CheckoutForm() {
-    const theme = useContext(MainContext);
+    const context = useContext(MainContext);
 
     const [address, setAddress] = useState(true);
 
@@ -103,89 +114,122 @@ function CheckoutForm() {
 
                 {({ values, setFieldValue }) => (
                     <Form>
-                        <FormContainer>
 
-                            <FormLeftColumn>
 
-                                <Header color="#000"
-                                    smallLetter
-                                    fontFamily="PatuaOne"
-                                    fontSize="1.5em"
-                                    marginTop="0px"
-                                >Billing details</Header>
 
-                                <InputWrapper directionRow>
-                                    <label>
-                                        <Field type="checkbox" name="isResidentialAddress" />
+                        <CheckoutFormContainer>
+
+                            <CheckoutFormLeftSide>
+
+                                <CheckoutFormHeader>
+                                    Billing details
+                                </CheckoutFormHeader>
+
+                                < CheckoutFormFieldWrapper directionRow>
+
+                                    <CheckoutFormLabel>
+                                        <CheckoutFormField type="checkbox" name="isResidentialAddress" />
                                         This is a Residential Address (optional)
-                                    </label>
-                                </InputWrapper>
+                                    </CheckoutFormLabel>
 
-                                <InputWrapper directionRow>
-                                    <InputWrapper>
-                                        <label htmlFor="firstName">First Name</label>
-                                        <Field name="firstName" type="text" />
-                                    </InputWrapper>
-
-                                    <InputWrapper marginLeft="10px">
-                                        <label htmlFor="lastName">Last Name</label>
-                                        <Field name="lastName" type="text" />
-                                    </InputWrapper>
-                                </InputWrapper>
-
-                                <InputWrapper >
-                                    <label htmlFor="companyName">Company name (optional)  </label>
-                                    <Field name="companyName" type="text" />
-                                </InputWrapper>
-
-                                <InputWrapper>
-                                    <h5>Country / Region </h5>
-                                    <h4>{theme.isUsaLocationActive ? "United States (US)" : "Select a country /region ..."}</h4>
-                                </InputWrapper>
-
-                                <InputWrapper>
-                                    <label htmlFor="streetAddress">Street address</label>
-                                    <Field name="streetAddress" type="text" placeholder="House number and street name" />
-
-                                    <label htmlFor="optionalAddress"></label>
-                                    <Field name="optionalAddress" type="text" placeholder="Apartment,suite,unit,etc. (optional)" />
-                                </InputWrapper>
-
-                                <InputWrapper>
-                                    <label htmlFor="townCity">Town / City</label>
-                                    <Field name="townCity" type="text" />
-                                </InputWrapper>
-
-                                <InputWrapper>
-                                    <label htmlFor="state">State</label>
-                                    <Field component="select" name="state">
-                                        {theme.states.map(state => <option value={state.abbreviation}>{state.name}</option>)}
-                                    </Field>
-                                </InputWrapper>
-
-                                <InputWrapper>
-                                    <label htmlFor="zip">Zip</label>
-                                    <Field name="zip" type="text" />
-                                </InputWrapper>
-
-                                <InputWrapper>
-                                    <label htmlFor="phone">Phone</label>
-                                    <Field name="phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" />
-                                </InputWrapper>
-
-                                <InputWrapper>
-                                    <label htmlFor="email">Email Address</label>
-                                    <Field name="email" type="email" />
-                                </InputWrapper>
-                            </FormLeftColumn>
+                                </ CheckoutFormFieldWrapper>
 
 
+                                < CheckoutFormFieldWrapper directionRow>
 
-                            <FormRightColumn>
+                                    < CheckoutFormFieldWrapper>
+                                        <CheckoutFormLabel htmlFor="firstName" required={true}>First Name</CheckoutFormLabel>
+                                        <CheckoutFormField name="firstName" type="text" />
+                                    </ CheckoutFormFieldWrapper>
 
-                                <InputWrapper>
-                                    <label>
-                                        <Field type="checkbox" name="differentAddress"
+                                    < CheckoutFormFieldWrapper>
+                                        <CheckoutFormLabel htmlFor="lastName" required={true}>Last Name</CheckoutFormLabel>
+                                        <CheckoutFormField name="lastName" type="text" />
+                                    </ CheckoutFormFieldWrapper>
+
+                                </ CheckoutFormFieldWrapper>
+
+
+                                < CheckoutFormFieldWrapper >
+
+                                    <CheckoutFormLabel htmlFor="companyName" required={false}>Company name (optional)  </CheckoutFormLabel>
+                                    <CheckoutFormField name="companyName" type="text" />
+
+                                </ CheckoutFormFieldWrapper>
+
+
+                                < CheckoutFormFieldWrapper>
+
+                                    <CheckoutFormLabel required={TrendingUpOutlined}>Country / Region </CheckoutFormLabel>
+                                    <CheckoutFormInfo>United States (US)</CheckoutFormInfo>
+
+                                </ CheckoutFormFieldWrapper>
+
+
+                                < CheckoutFormFieldWrapper>
+
+                                    <CheckoutFormLabel htmlFor="streetAddress" required={true}>Street address</CheckoutFormLabel>
+                                    <CheckoutFormField name="streetAddress" type="text" placeholder="House number and street name" />
+
+                                    <CheckoutFormLabel htmlFor="optionalAddress" required={false}></CheckoutFormLabel>
+                                    <CheckoutFormField name="optionalAddress" type="text" placeholder="Apartment,suite,unit,etc. (optional)" />
+
+                                </ CheckoutFormFieldWrapper>
+
+
+                                < CheckoutFormFieldWrapper>
+
+                                    <CheckoutFormLabel htmlFor="townCity" required={true}>Town / City</CheckoutFormLabel>
+                                    <CheckoutFormField name="townCity" type="text" />
+
+                                </ CheckoutFormFieldWrapper>
+
+
+                                < CheckoutFormFieldWrapper>
+
+                                    <CheckoutFormLabel htmlFor="state" required={true}>State</CheckoutFormLabel>
+                                    <CheckoutFormField component="select" name="state">
+                                        {context.states.map(state => <option value={state.abbreviation}>{state.name}</option>)}
+                                    </CheckoutFormField>
+
+                                </ CheckoutFormFieldWrapper>
+
+
+                                < CheckoutFormFieldWrapper>
+
+                                    <CheckoutFormLabel htmlFor="zip" required={true}>Zip</CheckoutFormLabel>
+                                    <CheckoutFormField name="zip" type="text" />
+
+                                </ CheckoutFormFieldWrapper>
+
+
+                                < CheckoutFormFieldWrapper>
+
+                                    <CheckoutFormLabel htmlFor="phone" required={true}>Phone</CheckoutFormLabel>
+                                    <CheckoutFormField name="phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" />
+
+                                </ CheckoutFormFieldWrapper>
+
+
+                                < CheckoutFormFieldWrapper>
+
+                                    <CheckoutFormLabel htmlFor="email" required={true}>Email Address</CheckoutFormLabel>
+                                    <CheckoutFormField name="email" type="email" />
+
+                                </ CheckoutFormFieldWrapper>
+
+                            </CheckoutFormLeftSide>
+
+
+
+
+                            <CheckoutFormRightSide>
+
+
+                                < CheckoutFormFieldWrapper>
+
+                                    <CheckoutFormLabel>
+                                        <CheckoutFormField type="checkbox" name="differentAddress"
                                             checked={values.check}
                                             onChange={() => {
                                                 setFieldValue("check", !values.check);
@@ -193,81 +237,113 @@ function CheckoutForm() {
                                             }}
                                         />
                                         Ship to a different address?
-                                    </label>
-                                </InputWrapper>
+                                    </CheckoutFormLabel>
+
+                                </ CheckoutFormFieldWrapper>
+
 
                                 {!address && (
                                     <>
-                                        <InputWrapper>
-                                            <label>
-                                                <Field type="checkbox" name="isResidentialAddress_2" />
+                                        < CheckoutFormFieldWrapper>
+
+                                            <CheckoutFormLabel>
+                                                <CheckoutFormField type="checkbox" name="isResidentialAddress_2" />
                                                 This is a Residential Address (optional)
-                                            </label>
-                                        </InputWrapper>
+                                            </CheckoutFormLabel>
 
-                                        <InputWrapper directionRow>
-                                            <InputWrapper>
-                                                <label htmlFor="firstName_2">First Name</label>
-                                                <Field name="firstName_2" type="text" />
-                                            </InputWrapper>
+                                        </ CheckoutFormFieldWrapper>
 
-                                            <InputWrapper marginLeft="10px">
-                                                <label htmlFor="lastName_2">Last Name</label>
-                                                <Field name="lastName_2" type="text" />
-                                            </InputWrapper>
-                                        </InputWrapper>
 
-                                        <InputWrapper>
-                                            <label htmlFor="companyName_2">Company name (optional)</label>
-                                            <Field name="companyName_2" type="text" />
-                                        </InputWrapper>
+                                        < CheckoutFormFieldWrapper directionRow>
 
-                                        <InputWrapper>
-                                            <h5>Country / Region </h5>
-                                            <h4>{theme.isUsaLocationActive ? "United States (US)" : "Select a country /region ..."}</h4>
-                                        </InputWrapper>
+                                            < CheckoutFormFieldWrapper>
+                                                <CheckoutFormLabel htmlFor="firstName_2" required={true}>First Name</CheckoutFormLabel>
+                                                <CheckoutFormField name="firstName_2" type="text" />
+                                            </ CheckoutFormFieldWrapper>
 
-                                        <InputWrapper directionRow>
-                                            <InputWrapper>
-                                                <label htmlFor="streetAddress_2">Street address</label>
-                                                <Field name="streetAddress_2" type="text" placeholder="House number and street name" />
-                                                <Field name="optionalAddress_2" type="text" placeholder="Apartment,suite,unit,etc. (optional)" />
-                                            </InputWrapper>
-                                        </InputWrapper>
+                                            < CheckoutFormFieldWrapper marginLeft="10px">
+                                                <CheckoutFormLabel htmlFor="lastName_2" required={true}>Last Name</CheckoutFormLabel>
+                                                <CheckoutFormField name="lastName_2" type="text" />
+                                            </ CheckoutFormFieldWrapper>
 
-                                        <InputWrapper>
-                                            <label htmlFor="townCity_2">Town / City</label>
-                                            <Field name="townCity_2" type="text" />
-                                        </InputWrapper>
+                                        </ CheckoutFormFieldWrapper>
 
-                                        <InputWrapper>
-                                            <label htmlFor="state_2"> State</label>
-                                            <Field as="select" name="state_2">
-                                                {theme.states.map(state => <option value={state.abbreviation}>{state.name}</option>)}
-                                            </Field>
-                                        </InputWrapper>
 
-                                        <InputWrapper>
-                                            <label htmlFor="zip_2">Zip</label>
-                                            <Field name="zip_2" type="text" />
-                                        </InputWrapper>
+                                        < CheckoutFormFieldWrapper>
 
-                                        <InputWrapper>
-                                            <label htmlFor="phone_2">Phone</label>
-                                            <Field name="phone_2" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" />
-                                        </InputWrapper>
+                                            <CheckoutFormLabel htmlFor="companyName_2" required={false}>Company name (optional)</CheckoutFormLabel>
+                                            <CheckoutFormField name="companyName_2" type="text" />
+
+                                        </ CheckoutFormFieldWrapper>
+
+
+                                        < CheckoutFormFieldWrapper>
+
+                                            <CheckoutFormLabel required={true}>Country / Region </CheckoutFormLabel>
+                                            <CheckoutFormInfo>United States (US)</CheckoutFormInfo>
+
+                                        </ CheckoutFormFieldWrapper>
+
+
+                                        < CheckoutFormFieldWrapper>
+
+                                            <CheckoutFormLabel htmlFor="streetAddress_2" required={true}>Street address</CheckoutFormLabel>
+                                            <CheckoutFormField name="streetAddress_2" type="text" placeholder="House number and street name" />
+
+                                            <CheckoutFormLabel htmlFor="streetAddress_2" required={false}></CheckoutFormLabel>
+                                            <CheckoutFormField name="optionalAddress_2" type="text" placeholder="Apartment,suite,unit,etc. (optional)" />
+
+                                        </ CheckoutFormFieldWrapper>
+
+
+                                        < CheckoutFormFieldWrapper>
+
+                                            <CheckoutFormLabel htmlFor="townCity_2" required={true}>Town / City</CheckoutFormLabel>
+                                            <CheckoutFormField name="townCity_2" type="text" />
+
+                                        </ CheckoutFormFieldWrapper>
+
+
+                                        < CheckoutFormFieldWrapper>
+
+                                            <CheckoutFormLabel htmlFor="state_2" required={true}> State</CheckoutFormLabel>
+                                            <CheckoutFormField as="select" name="state_2">
+                                                {context.states.map(state => <option value={state.abbreviation}>{state.name}</option>)}
+                                            </CheckoutFormField>
+
+                                        </ CheckoutFormFieldWrapper>
+
+
+                                        < CheckoutFormFieldWrapper>
+
+                                            <CheckoutFormLabel htmlFor="zip_2" required={true}>Zip</CheckoutFormLabel>
+                                            <CheckoutFormField name="zip_2" type="text" />
+
+                                        </ CheckoutFormFieldWrapper>
+
+
+                                        < CheckoutFormFieldWrapper>
+
+                                            <CheckoutFormLabel htmlFor="phone_2" required={false}>Phone</CheckoutFormLabel>
+                                            <CheckoutFormField name="phone_2" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" />
+
+                                        </ CheckoutFormFieldWrapper>
                                     </>
                                 )}
 
-                                <InputWrapper>
-                                    <label htmlFor="orderDetails">Order notes (optional)</label>
-                                    <Field as="textarea" name="orderDetails"
-                                        placeholder="Notes about your order , e.g special notes for delivery" />
-                                    <ErrorMessage name="orderDetails" component="div" className="errorMsg" />
-                                </InputWrapper>
+                                < CheckoutFormFieldWrapper>
 
-                            </FormRightColumn>
-                        </FormContainer>
+                                    <CheckoutFormLabel htmlFor="orderDetails" required={false}>Order notes (optional)</CheckoutFormLabel>
+                                    <CheckoutFormField as="textarea" name="orderDetails"
+                                        placeholder="Notes about your order , e.g special notes for delivery" />
+                                    <ErrorMessage name="orderDetails" component="div" />
+
+                                </ CheckoutFormFieldWrapper>
+
+
+                            </CheckoutFormRightSide>
+
+                        </CheckoutFormContainer>
                     </Form>
                 )}
             </Formik>

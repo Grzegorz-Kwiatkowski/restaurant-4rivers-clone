@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BiWindow } from "react-icons/bi";
+
 
 
 const Header = styled.h1`
@@ -21,9 +21,9 @@ const Info = styled.p`
   text-transform:${props => props.uppercase ? "uppercase" : "none"};
   width:fit-content;
 
-  @media screen and (max-width: 768px) { 
-    font-size:.9rem;  
-  }
+    @media screen and (max-width: 768px) { 
+      font-size:.9rem;  
+    }
 
     @media screen and (max-width: 480px) { 
       font-size:.7rem;  
@@ -149,9 +149,7 @@ const BoldText = styled.p`
 
 // EmptyCart
 
-const WindowIcon = styled(BiWindow)`
-    color:#8F2626;
-`;
+
 const EmptyCartContainer = styled.div`
 background-color:#F7F6F7;
 width:95vw;
@@ -169,12 +167,6 @@ align-items:center;
 padding:10px;
 `;
 
-// checkout
-
-const Wrapper = styled.div`
- 
-
-`;
 
 const HeaderWrapper = styled.div`
   text-align: left;
@@ -214,36 +206,10 @@ const Input = styled.input`
 width:${props => props.width || ""};
 `;
 
-//checkoutForm
-const FormContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-      "leftColumn rightColumn";
-      `;
 
-
-const FormLeftColumn = styled.div`
-  grid-area: leftColumn;
-  padding:20px;
- 
-  `;
-const FormRightColumn = styled.div`
-  grid-area: rightColumn;
-  padding:20px;
-  `;
-const InputWrapper = styled.div`
-    display:flex;
-    flex-direction:${props => props.directionRow ? "row" : "column"};
-    width:100%;
-   margin-left:${props => props.marginLeft || ""};
-   margin-bottom:10px;
-  `;
 export {
   Header, Info, Alink, Button, Image, Container, CartWrapper, Table, DeleteBtn,
-  BoldText, Th, Td, WindowIcon, EmptyCartContainer, EmptyCartWrapper, Wrapper,
-  HeaderWrapper, CouponWrapper, CheckoutLink, Input, TextWrapper, FormContainer,
-  FormLeftColumn, FormRightColumn, InputWrapper, BigButton
+  BoldText, Th, Td, EmptyCartContainer, EmptyCartWrapper,
+  HeaderWrapper, CouponWrapper, CheckoutLink, Input, TextWrapper, BigButton
 };
 
