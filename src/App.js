@@ -23,9 +23,11 @@ import OrderOnlineModal from './components/OrderOnlineModal'
 import Cart from './Pages/Cart/Cart'
 import Checkout from "./Pages/Cart/Checkout";
 import CheckoutProvider from './Pages/Cart/CheckoutProvider'
+import About from './Pages/About/About'
+import PaymentSuccesfull from "./Pages/Cart/PaymentSuccesfull";
 
 import "./App.css";
-import PaymentSuccesfull from "./Pages/Cart/PaymentSuccesfull";
+
 
 
 const history = createBrowserHistory()
@@ -123,6 +125,10 @@ class App extends Component {
 
             <Route path="/ok">
               <PaymentSuccesfull />
+            </Route>
+
+            <Route path="/about">
+              <About />
             </Route>
 
           </Switch>

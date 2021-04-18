@@ -44,6 +44,10 @@ import kids_meals_bg from './img/menu/accordion/kids-meals-bg.jpg'
 import desserts_bg from './img/menu/accordion/desserts-bg.jpg'
 import homestyle_sides_bg from "./img/menu/accordion/homestyle-sides-bg.jpg"
 
+import about_coop from './img/about/about_coop.jpg'
+import about_sweetshop from './img/about/about_sweetshop_2.jpg'
+import about_cakes from './img/about/about_cakes.jpg'
+
 const shopProducts = [
     {
         id: 1,
@@ -917,7 +921,33 @@ const food = [
     }
 ]
 
-export { shopProducts, couponCodes, states, locations, gifts, food }
+const adverts = [
+    {
+        id: 1,
+        header: "The Coop",
+        info: "Southern comfort classics made from scratch daily",
+        image: about_coop,
+        btnLabel: "Visit site",
+        link: "https://www.asouthernaffair.com/"
+    },
+    {
+        id: 2,
+        header: "The 4R Sweet Shop",
+        info: "Desserts not for the faint of heart",
+        image: about_sweetshop,
+        btnLabel: "View Desserts",
+        link: "/menu"
+    },
+    {
+        id: 3,
+        header: "Specialty cakes",
+        info: "Custom decadent cakes",
+        image: about_cakes,
+        btnLabel: "Visit site",
+        link: "https://www.4rspecialtycakes.com/"
+    }
+]
+export { shopProducts, couponCodes, states, locations, gifts, food, adverts }
 
 
 

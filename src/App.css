@@ -28,6 +28,11 @@
   src: local("Courgette"), url("./font/Courgette.ttf") format("opentype");
 }
 
+@font-face {
+  font-family: "Neuton";
+  src: local("Neuton"), url("./font/Neuton.ttf") format("opentype");
+}
+
 .underline--white::after {
   content: "";
   /* This is necessary for the pseudo element to work. */

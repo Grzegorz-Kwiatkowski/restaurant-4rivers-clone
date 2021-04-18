@@ -36,9 +36,6 @@ export const HomeInfo = styled.p`
            font-size:.5rem;
            padding:0 0;
         }
-        @media screen and (max-width: 480px) { 
-              
-   }
 `;
 
 export const HomeBigButton = styled(BigButton)`
@@ -73,9 +70,6 @@ export const HomeBonusCard = styled(Container)`
     background-size: 150%;
     padding: 4rem 0;
     
-        @media screen and (max-width: 768px) { 
-            
-        }
 `;
 
 export const HomeCatering = styled(Container)`
@@ -125,6 +119,7 @@ export const HomeBeginingsText = styled.p`
     width:50%;
     font-size:.8rem;
     padding:1rem 2.5rem 0 2.5rem; 
+    
         @media screen and (max-width: 768px) { 
             width:100%; 
     }
