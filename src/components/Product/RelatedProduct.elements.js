@@ -1,9 +1,20 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { Link } from 'react-router-dom'
-import { Header, Info } from '../../Styled Components/styled-components'
+import { Header, Info, Image } from '../../Styled Components/styled-components'
+
+const fadeInAnimation = keyframes`
+    0% {
+        opacity:0;
+        }
+    100% { 
+        opacity:1;  
+        }
+`
 
 export const RelatedProductContainer = styled.div`
-
+    padding: .5rem;
+    animation-name: ${fadeInAnimation};
+    animation-duration: 1.5s;
 `;
 
 export const RelatedProductWrapper = styled.div`
@@ -13,7 +24,7 @@ export const RelatedProductWrapper = styled.div`
     flex-direction: column;
     height: auto;
     width: auto;
-    padding: .5rem;
+    
 
         @media screen and (max-width: 768px) { 
             padding: .8rem 1.2rem;
@@ -46,5 +57,29 @@ export const RelatedProductLink = styled(Link)`
 
         :hover {
             text-decoration:none;
+        }
+`;
+
+const wobble = keyframes`
+  25% {
+    transform: rotate(4deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+`
+
+export const RelatedProductImage = styled(Image)`
+    width:100%;
+
+    :hover {
+        animation-name: ${wobble};
+        animation-duration: .5s;
         }
 `;

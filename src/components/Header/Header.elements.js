@@ -2,9 +2,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 import { Image } from "../../Styled Components/styled-components"
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { motion } from 'framer-motion';
-
-
 
 export const HeaderContainer = styled.div`
     display: flex;
@@ -57,7 +54,7 @@ export const HeaderFullLogoImg = styled(Image)`
 `;
 
 
-export const HeaderNav = styled(motion.nav)`
+export const HeaderNav = styled.nav`
 height: 100%;
 
     @media screen and (max-width: 768px) {
@@ -131,7 +128,7 @@ export const HeaderListItem = styled.li`
             }
 `;
 
-export const HeaderList = styled(motion.ul)`
+export const HeaderList = styled.ul`
     display: flex;
     list-style-type: none;
     height: 100%;

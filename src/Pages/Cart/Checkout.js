@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react'
+import { useHistory } from 'react-router'
 
-import StripeForm from './StripeForm'
 import { MainContext } from '../../Contexts/Contexts'
-import { Container, Input } from '../../Styled Components/styled-components'
 
 import {
     CheckoutContainer,
@@ -19,17 +18,16 @@ import {
     ApplyCouponButton
 } from './Checkout.elements'
 
-import CheckoutForm from './CheckoutForm'
 
 
+function Checkout() {
 
-function Checkout({ stripe, history }) {
-
+    const history = useHistory();
     const context = useContext(MainContext);
     const [couponOpen, setCouponOpen] = useState(false);
 
     if (context.addedToBasket.length === 0) {
-        history.push('/');
+        history.push('/shop');
         return null;
     }
 
@@ -40,59 +38,53 @@ function Checkout({ stripe, history }) {
     return (
         <CheckoutContainer>
 
-            {!context.payment_success && (
-                <>
-                    <CheckoutHeaderWrapper>
+            <CheckoutHeaderWrapper>
 
-                        <CheckoutHeader>
-                            Checkout
+                <CheckoutHeader>
+                    Checkout
                         </CheckoutHeader>
 
-                    </CheckoutHeaderWrapper>
+            </CheckoutHeaderWrapper>
 
-                    <CheckoutCouponWrapper>
+            <CheckoutCouponWrapper>
 
-                        <CheckoutWindowIcon />
-                        <CheckoutCouponTextWrapper>
-                            Have a coupon?
+                <CheckoutWindowIcon />
+                <CheckoutCouponTextWrapper>
+                    Have a coupon?
                             {" "}
-                            <CheckoutLink onClick={handleCouponOpen}>
-                                Click here to enter your code
+                    <CheckoutLink onClick={handleCouponOpen}>
+                        Click here to enter your code
                             </CheckoutLink>
-                        </CheckoutCouponTextWrapper>
+                </CheckoutCouponTextWrapper>
 
-                    </CheckoutCouponWrapper>
+            </CheckoutCouponWrapper>
 
-                    {couponOpen && (
+            {couponOpen && (
 
-                        <CouponOpenedContainer>
+                <CouponOpenedContainer>
 
-                            <CouponOpenedWrapper>
+                    <CouponOpenedWrapper>
 
-                                <CouponOpenedLabel>
-                                    If you have a coupon code, please apply it below
+                        <CouponOpenedLabel>
+                            If you have a coupon code, please apply it below
                                 </CouponOpenedLabel>
 
-                                <CouponOpenedInput
-                                    type="text"
-                                    placeholder="Coupon code"
-                                    onChange={(e) => context.handleCouponCode(e)} />
+                        <CouponOpenedInput
+                            type="text"
+                            placeholder="Coupon code"
+                            isActive={context.couponActivated}
+                            onChange={(e) => context.handleCouponCode(e)} />
 
-                            </CouponOpenedWrapper>
+                    </CouponOpenedWrapper>
 
-                            <ApplyCouponButton
-                                colorBeige
-                                onClick={context.deleteCouponCode}>
-                                Apply coupon
+                    <ApplyCouponButton
+                        colorBeige
+                        onClick={context.deleteCouponCode}>
+                        Apply coupon
                             </ApplyCouponButton>
 
-                        </CouponOpenedContainer>
-                    )}
-                    <CheckoutForm />
-                </>
+                </CouponOpenedContainer>
             )}
-
-            <StripeForm stripe={stripe} history={history} />
 
         </CheckoutContainer>
     )

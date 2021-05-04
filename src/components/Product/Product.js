@@ -15,20 +15,20 @@ import {
 function Product({ id, header, image, price, link, btnLabel }) {
     return (
         <ProductContainer background={image}>
-            <ProductLink href={link}>
-                <ProductBackgroundRed></ProductBackgroundRed>
 
-                <ProductHeader>{header}</ProductHeader>
+            <ProductBackgroundRed></ProductBackgroundRed>
 
-                <ProductContent>
-                    <ProductInfo>
-                        {price}
-                    </ProductInfo>
-                    <Link to={link}>
-                        <ProductButton>{btnLabel}</ProductButton>
-                    </Link>
-                </ProductContent>
-            </ProductLink>
+            <ProductHeader>{header}</ProductHeader>
+
+            <ProductContent>
+                <ProductInfo>
+                    {price}
+                </ProductInfo>
+                <ProductLink to={link}>
+                    <ProductButton>{btnLabel}</ProductButton>
+                </ProductLink>
+            </ProductContent>
+
         </ProductContainer>
 
     );

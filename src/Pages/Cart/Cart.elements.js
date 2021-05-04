@@ -46,6 +46,9 @@ export const CartTableBodyContent = styled.tbody`
             td {
                 text-align:center;
             }
+            th,td {
+                font-family:PatuaOne;
+            }
         }
         
         @media screen and (max-width: 768px) { 
@@ -77,7 +80,7 @@ export const CartTableBodyContent = styled.tbody`
         }
 `;
 
-export const CartTableBodyCoupon = styled.tbody`
+export const CartTableBodyCoupon = styled.tfoot`
         
     tr {
         border:.5px solid lightgray;
@@ -100,6 +103,8 @@ export const CartTableBodyCoupon = styled.tbody`
 
 export const CartInput = styled.input`
     width:50%;
+    padding-left:.5rem;
+    border:${({ isActive }) => (isActive && "2px solid #6DC22E")};
 
     @media screen and (max-width: 768px) { 
         width:100%;

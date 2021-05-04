@@ -1,17 +1,39 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { Header, Info, Button, Container } from '../../Styled Components/styled-components'
 
-export const SelectedProductContainer = styled(Container)`
-    padding:5rem 0;
+const opacityAnimation = keyframes`
+    0% { 
+        opacity:0;
+        }
+    100% { 
+        opacity:1;
+        }
+`
 
+export const SelectedProductContainer = styled(Container)`
+    padding:2.5rem 0 5rem 0;
+    animation-name: ${opacityAnimation};
+    animation-duration: 2s;
         @media screen and (max-width: 768px) { 
            padding:1rem 0;
         }
 `;
+
+const scaleAnimation = keyframes`
+    0% { 
+        transform:scale(0) rotateZ(0deg);
+        }
+    100% {
+        transform:scale(1) rotateZ(360deg);
+    }
+`;
+
 export const SelectedProductWrapper = styled.div`
     display: flex;
     width: 90%;
     height: auto;
+    animation-name: ${({ clicked }) => (clicked && scaleAnimation)};
+    animation-duration: 1.5s;
 
         @media screen and (max-width: 768px) { 
             flex-direction:column;
@@ -76,14 +98,19 @@ export const SelectedProductButton = styled(Button)`
 
 `;
 
+
 export const RelatedProducts = styled.div`
     display: flex;
     flex-direction: row;
     width:90%;
-    @media screen and (max-width: 768px) { 
-        flex-direction:column;
-      }
+   
+        @media screen and (max-width: 768px) { 
+            flex-direction:column;
+        }
 `;
+
+
+
 
 export const RelatedProductsHeaderWrapper = styled(Container)`
     padding:35px 0;

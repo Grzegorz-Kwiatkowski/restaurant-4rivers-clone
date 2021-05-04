@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-
 import { MainContext } from '../../Contexts/Contexts'
 import {
     CartContainer,
@@ -56,8 +55,10 @@ function Cart() {
                                 <CartTableBodyCoupon>
                                     <tr>
                                         <td >
-                                            <CartInput type="text"
+                                            <CartInput
+                                                type="text"
                                                 placeholder="Coupon code"
+                                                isActive={context.couponActivated}
                                                 onChange={(e) => context.handleCouponCode(e)}
                                             />
 

@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Squash as Hamburger } from 'hamburger-react'
 
@@ -21,14 +21,15 @@ function Header() {
 
     const context = useContext(MainContext);
     const [click, setClick] = useState(false);
+
     const handleClick = () => {
         setClick(!click);
     }
+
     const closeMobileMenu = () => setClick(false);
 
 
 
-    console.log(click)
     return (
         <HeaderContainer >
 
@@ -42,8 +43,6 @@ function Header() {
                     <HeaderFullLogoImg src={full_name_4R} alt="" width="10rem" height=".7rem" />
                 </HeaderLogoWrapper>
             </Link>
-
-
 
 
             <HeaderNav click={click}>
@@ -64,11 +63,6 @@ function Header() {
             </HeaderNav>
 
 
-
-
-
-
-
             <BasketLink to="/cart">
 
                 <BasketWrapper>
@@ -87,6 +81,7 @@ function Header() {
                 </BasketWrapper>
 
             </BasketLink >
+
         </HeaderContainer >
     )
 

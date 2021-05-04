@@ -3,5 +3,6 @@
         "big",
         "catering",
         "header"
-    ]
+    ],
+    "git.ignoreLimitWarning": true
 }

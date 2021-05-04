@@ -118,7 +118,7 @@ function GiftCard() {
 
 
       <GiftCardOffers>
-        {gift.map(gift => <Gift key={gift.id} image={gift.image} header={gift.header} info={gift.info} btnLabel={gift.btnLabel} />)}
+        {gift.map(gift => <Gift key={gift.id} image={gift.image} header={gift.header} info={gift.info} btnLabel={gift.btnLabel} link="/" />)}
       </GiftCardOffers>
 
       <Advertisement header="Hungry Now ?" label="Order online" link="" />

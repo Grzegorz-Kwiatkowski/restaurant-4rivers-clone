@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+
 
 export const AccordionSectionContainer = styled.div`
 
@@ -60,11 +60,13 @@ const rotateLeftAnimation = keyframes`
     }
 `;
 
-export const AccordionSectionIcon = styled(AddCircleOutlineIcon)`
+export const AccordionSectionIcon = styled.div`
     animation-name:${({ isOpen }) => (isOpen ? rotateRightAnimation : rotateLeftAnimation)}; 
     animation-duration:1s;
     animation-direction:normal;
     animation-fill-mode: forwards;
+    width:fit-content;
+    height:fit-content;
 `;
 
 export const AccordionSectionContent = styled.div`

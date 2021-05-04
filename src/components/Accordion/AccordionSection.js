@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
 import {
     AccordionSectionContainer,
@@ -35,7 +36,7 @@ class AccordionSection extends Component {
         const IconStyle = {
             fontSize: 50,
             fontWeight: "none",
-            color: "lightgray"
+            color: "lightgray",
         }
 
         return (
@@ -50,7 +51,9 @@ class AccordionSection extends Component {
                     </AccordionSectionLabel>
 
                     <AccordionSectionIconWrapper >
-                        <AccordionSectionIcon isOpen={isOpen} style={IconStyle} />
+                        <AccordionSectionIcon isOpen={isOpen}>
+                            <AddCircleOutlineIcon style={IconStyle} />
+                        </AccordionSectionIcon>
                     </AccordionSectionIconWrapper>
 
                 </AccordionSectionWrapper>

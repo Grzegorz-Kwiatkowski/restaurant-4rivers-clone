@@ -1,13 +1,12 @@
 import React from 'react'
 
-import { Image } from '../../Styled Components/styled-components'
-
 import {
     RelatedProductContainer,
     RelatedProductHeader,
     RelatedProductWrapper,
     RelatedProductInfo,
-    RelatedProductLink
+    RelatedProductLink,
+    RelatedProductImage
 } from './RelatedProduct.elements'
 
 
@@ -18,7 +17,7 @@ function RelatedProduct({ header, price, image, link }) {
             <RelatedProductLink to={link}>
                 <RelatedProductWrapper>
 
-                    <Image src={image} width="100%" />
+                    <RelatedProductImage src={image} />
 
                     <RelatedProductHeader>
                         {header}

@@ -23,6 +23,7 @@ app.use(bodyParser.json())
 app.use('/api', router)
 app.use(express.static(path.join(__dirname, '../build')))
 
+
 app.get('*', (_, res) => {
     res.sendFile(path.resolve(__dirname, '../build/index.html'))
 })

@@ -1,15 +1,19 @@
 import React from 'react'
 
-import { Info, WindowIcon, Wrapper, EmptyCartContainer } from '../../Styled Components/styled-components'
-
+import {
+    EmptyCartContainer,
+    EmptyCartWrapper,
+    WindowIcon,
+    EmptyCartInfo
+} from './EmptyCart.elements';
 
 function EmptyCart() {
     return (
-        <EmptyCartContainer >
-            <Wrapper>
+        <EmptyCartContainer>
+            <EmptyCartWrapper>
                 <WindowIcon />
-                <Info color="#A1A1A1" fontSize=".7em" marginLeft="10px" marginTop="0" marginBottom="0">Your cart is currently empty.</Info>
-            </Wrapper>
+                <EmptyCartInfo >Your cart is currently empty.</EmptyCartInfo>
+            </EmptyCartWrapper>
         </EmptyCartContainer>
     )
 }

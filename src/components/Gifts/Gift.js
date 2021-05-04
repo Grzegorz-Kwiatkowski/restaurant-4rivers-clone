@@ -15,20 +15,20 @@ import {
 function Gift({ id, header, image, info, link, btnLabel }) {
     return (
         <GiftContainer background={image}>
-            <GiftLink href={link}>
-                <GiftBackgroundRed></GiftBackgroundRed>
 
-                <GiftHeader>{header}</GiftHeader>
+            <GiftBackgroundRed></GiftBackgroundRed>
 
-                <GiftContent>
-                    <GiftInfo>
-                        {info}
-                    </GiftInfo>
-                    <Link to={link}>
-                        <GiftButton>{btnLabel}</GiftButton>
-                    </Link>
-                </GiftContent>
-            </GiftLink>
+            <GiftHeader>{header}</GiftHeader>
+
+            <GiftContent>
+                <GiftInfo>
+                    {info}
+                </GiftInfo>
+                <GiftLink to={link}>
+                    <GiftButton>{btnLabel}</GiftButton>
+                </GiftLink>
+            </GiftContent>
+
         </GiftContainer>
 
     );

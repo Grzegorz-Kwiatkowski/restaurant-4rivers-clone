@@ -3,8 +3,8 @@ import { BiWindow } from "react-icons/bi";
 import { Header, Container, Button } from '../../Styled Components/styled-components'
 
 export const CheckoutContainer = styled.div`
-    padding:2.5rem 4rem;
-
+    padding:2.5rem 0;
+  
         @media screen and (max-width: 768px) { 
            padding:2rem 1.5rem;
         }
@@ -81,6 +81,7 @@ export const CouponOpenedInput = styled.input`
         padding:.2rem;
         font-family:PatuaOne;
         text-align:center;
+        border:${({ isActive }) => (isActive && "2px solid #6DC22E")};
 `;
 
 export const ApplyCouponButton = styled(Button)`

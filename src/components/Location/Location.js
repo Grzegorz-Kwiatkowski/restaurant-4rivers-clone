@@ -16,25 +16,25 @@ import {
 function Location({ id, header, image, address, city, link, btnLabel }) {
     return (
         <LocationContainer background={image}>
-            <LocationLink href={link}>
-                <LocationBackgroundRed></LocationBackgroundRed>
 
-                <LocationHeader>{header}</LocationHeader>
+            <LocationBackgroundRed></LocationBackgroundRed>
 
-                <LocationContent>
-                    <LocationUnderline>
-                        <LocationInfo>
-                            {address}
-                        </LocationInfo>
-                        <LocationInfo>
-                            {city}
-                        </LocationInfo>
-                    </LocationUnderline>
-                    <Link to={link}>
-                        <LocationButton>{btnLabel}</LocationButton>
-                    </Link>
-                </LocationContent>
-            </LocationLink>
+            <LocationHeader>{header}</LocationHeader>
+
+            <LocationContent>
+                <LocationUnderline>
+                    <LocationInfo>
+                        {address}
+                    </LocationInfo>
+                    <LocationInfo>
+                        {city}
+                    </LocationInfo>
+                </LocationUnderline>
+                <LocationLink to={link}>
+                    <LocationButton>{btnLabel}</LocationButton>
+                </LocationLink>
+            </LocationContent>
+
         </LocationContainer>
 
     );

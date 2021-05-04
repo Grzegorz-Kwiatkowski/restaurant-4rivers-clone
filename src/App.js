@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { createBrowserHistory } from 'history'
+
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -19,27 +19,32 @@ import MainMenu from './Pages/MainMenu/MainMenu'
 import MissedVisit from './Pages/Loyalty/MissedVisit'
 import Shop from './Pages/Shop/Shop'
 import SelectedProduct from './components/Product/SelectedProduct'
-import OrderOnlineModal from './components/OrderOnlineModal'
+import OrderOnline from './components/OrderOnline-Modal/OrderOnline'
 import Cart from './Pages/Cart/Cart'
-import Checkout from "./Pages/Cart/Checkout";
-import CheckoutProvider from './Pages/Cart/CheckoutProvider'
 import About from './Pages/About/About'
-import PaymentSuccesfull from "./Pages/Cart/PaymentSuccesfull";
+import ScrollTop from './components/ScrollTop/ScrollTop';
+import StripeContainer from './Stripe/StripeContainer';
 
 import "./App.css";
 
 
 
-const history = createBrowserHistory()
+function App() {
 
-class App extends Component {
+  useEffect(() => {
 
+    const body = document.querySelector('#root');
 
-  render() {
+    body.scrollIntoView({
+      behavior: 'smooth'
+    }, 1000)
 
-    return (
-      <Router>
-        <OrderOnlineModal />
+  })
+
+  return (
+    <Router>
+      <OrderOnline />
+      <ScrollTop>
         <div className="App">
 
           <Header />
@@ -91,8 +96,6 @@ class App extends Component {
               )}
             />
 
-
-
             <Route
               path="/loyalty"
               render={({ match: { url } }) => (
@@ -120,11 +123,11 @@ class App extends Component {
             </Route>
 
             <Route path="/checkout">
-              <CheckoutProvider history={history} />
+              <StripeContainer />
             </Route>
 
             <Route path="/ok">
-              <PaymentSuccesfull />
+
             </Route>
 
             <Route path="/about">
@@ -135,13 +138,10 @@ class App extends Component {
 
           <Footer />
         </div>
+      </ScrollTop>
 
-
-      </Router >
-    );
-  }
-
-
+    </Router >
+  );
 }
 
 export default App;

@@ -29,7 +29,8 @@ function MyAccordion() {
         const allDesserts = meals[meals.length - 1];
 
         return (
-            <>
+            <React.Fragment key={index}>
+
                 <MyAccordionHeader>
                     {allDesserts.title[index]}
                 </MyAccordionHeader>
@@ -40,10 +41,10 @@ function MyAccordion() {
                     </BorderWrapper>
                 </MyAccordionInfo>
 
-                <MyAccordionMealsContainer>
+                <MyAccordionMealsContainer key={first.id}>
                     {first.map((second, index) => {
                         return (
-                            <MyAccordionSingleMeal>
+                            <MyAccordionSingleMeal key={second.id}>
 
                                 <MyAccordionTitle>
                                     {second.name}
@@ -57,7 +58,7 @@ function MyAccordion() {
                         )
                     })}
                 </MyAccordionMealsContainer>
-            </>
+            </React.Fragment>
 
         )
     })
@@ -67,7 +68,7 @@ function MyAccordion() {
             <Accordion allowMultipleOpen >
 
                 {meals.map(meal => (
-                    <Container label={meal.header} background={meal.image}>
+                    <Container key={meal.id} id={meal.id} label={meal.header} background={meal.image}>
                         {
                             !Array.isArray(meal.title) ? (
                                 <MyAccordionContainer>
@@ -87,7 +88,7 @@ function MyAccordion() {
 
                                     <MyAccordionMealsContainer>
                                         {meal.meals.map(meal => (
-                                            <MyAccordionSingleMeal>
+                                            <MyAccordionSingleMeal key={meal.id}>
 
                                                 <MyAccordionTitle>
                                                     {meal.name}
@@ -105,7 +106,7 @@ function MyAccordion() {
                                 </MyAccordionContainer>
 
                             ) : (
-                                <MyAccordionContainer>
+                                <MyAccordionContainer key={meal.id}>
                                     {desserts}
 
                                     <a href="https://www.4rspecialtycakes.com/" target="_blank">

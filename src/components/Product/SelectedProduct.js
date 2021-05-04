@@ -1,4 +1,4 @@
-import React, { Component, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
 
@@ -15,7 +15,8 @@ import {
     RelatedProducts,
     RelatedProductsHeaderWrapper,
     RelatedProductsHeader,
-    SelectedProductWrapper
+    SelectedProductWrapper,
+    RelatedProductsSection
 } from './SelectedProduct.elements'
 
 import RelatedProduct from '../Product/RelatedProduct'
@@ -24,25 +25,43 @@ import RelatedProduct from '../Product/RelatedProduct'
 
 const SelectedProduct = (props) => {
 
-
     const index = props.match.params.id;
     const context = useContext(MainContext);
+    const [animate, setAnimate] = useState(false);
 
-    const { allProducts, changeString, addToBasket } = context;
+    const handleClick = () => {
+        setAnimate(true)
+        setTimeout(() => {
+            setAnimate(false);
+        }, 2000);
+    }
+
+    const { allProducts, changeString, addToBasket, addedToBasket } = context;
 
     const singleProduct = allProducts.filter(item => changeString(item.header) === index);
+
+
+    for (let product of addedToBasket) {
+        if (product.id === singleProduct[0].id)
+            singleProduct[0].isAdded = true;
+    }
+
 
     const foodAndSauces = allProducts.filter(product => product.category === "food&sauces");
     const retail = allProducts.filter(product => product.category === "retail");
 
     let restOfRelatedFoodProducts = foodAndSauces.filter(product => changeString(product.header) !== index);
+
     let relatedFoodProducts = [];
 
     while (relatedFoodProducts.length < 4) {
         let index = Math.floor(Math.random() * restOfRelatedFoodProducts.length);
         relatedFoodProducts.push(restOfRelatedFoodProducts[index]);
-        relatedFoodProducts = Array.from(new Set(relatedFoodProducts));
+        if (relatedFoodProducts.length > 0) {
+            relatedFoodProducts = Array.from(new Set(relatedFoodProducts));
+        }
     }
+
 
     let relatedRetailProducts = retail.filter(item => changeString(item.header) !== index);
 
@@ -52,7 +71,7 @@ const SelectedProduct = (props) => {
     return (
         <SelectedProductContainer>
 
-            <SelectedProductWrapper>
+            <SelectedProductWrapper clicked={animate}>
 
                 <SelectedProductImage>
 
@@ -61,8 +80,8 @@ const SelectedProduct = (props) => {
                         fade={true}
                         slide={false}>
 
-                        {isArray ? singleProduct[0].image.map(img => (
-                            <Carousel.Item >
+                        {isArray ? singleProduct[0].image.map((img, index) => (
+                            <Carousel.Item key={index}>
                                 <img
                                     className="d-block w-100"
                                     src={img}
@@ -104,7 +123,7 @@ const SelectedProduct = (props) => {
                     </SelectedProductContent>
 
                     <SelectedProductButton colorBeige
-                        onClick={() => addToBasket(singleProduct[0])}>
+                        onClick={() => addToBasket(singleProduct[0])} disabled={singleProduct[0].isAdded}>
                         Add to cart
                     </SelectedProductButton>
 
@@ -120,11 +139,12 @@ const SelectedProduct = (props) => {
             </RelatedProductsHeaderWrapper>
 
 
-            <RelatedProducts>
+            <RelatedProducts onClick={handleClick}>
                 {singleProduct[0].category === "retail" ? (
                     <>
                         {relatedRetailProducts.map(product =>
                             <RelatedProduct
+                                key={product.id}
                                 header={product.header}
                                 price={product.price}
                                 image={Array.isArray(product.image) ? product.image[0] : product.image}
@@ -136,6 +156,7 @@ const SelectedProduct = (props) => {
                     <>
                         {relatedFoodProducts.map(product =>
                             <RelatedProduct
+                                key={product.id}
                                 header={product.header}
                                 price={product.price}
                                 image={Array.isArray(product.image) ? product.image[0] : product.image}

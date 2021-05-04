@@ -26,7 +26,6 @@ import {
     FooterContactWrapper
 } from './Footer.elements';
 
-import { Button } from '../../Styled Components/styled-components';
 
 
 function Footer() {
@@ -34,11 +33,10 @@ function Footer() {
         <FooterContainer>
             <FooterSiteMap>
 
-
                 <FooterLogoWrapper>
-                    <FooterLink lowercase>
+                    <FooterLink to="/loyalty">
                         <FooterImageLogo image={logo_4R_bg}>
-                            <FooterText>Pitmaster loyalty Program</FooterText>
+                            <FooterText text="lowercase">Pitmaster loyalty Program</FooterText>
                         </FooterImageLogo>
                     </FooterLink>
                 </FooterLogoWrapper>
@@ -47,7 +45,7 @@ function Footer() {
 
                 <FooterSection>
                     <FooterHeader>
-                        <FooterLink underline white to="locations/">locations</FooterLink>
+                        <FooterLink underline="underline" color="#fff" to="/locations">locations</FooterLink>
                     </FooterHeader>
                     <FooterList image={arrow_right}>
                         <FooterListItem><FooterLink to="/locations/tampa">Carrollwood</FooterLink></FooterListItem>

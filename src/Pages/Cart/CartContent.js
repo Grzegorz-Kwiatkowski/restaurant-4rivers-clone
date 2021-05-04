@@ -23,8 +23,9 @@ function CartContent() {
     }
 
     const addedProducts = context.addedToBasket.map(product => {
+
         return (
-            <>
+            <React.Fragment key={product.id}>
                 <CartContentTrashBinTableRow>
                     <th>
                         <CartContentTrashBinMobileWrapper>
@@ -48,20 +49,20 @@ function CartContent() {
 
                     <th>Price</th>
                     <td>
-                        ${product.price}
+                        $ {product.price}
                     </td>
 
                     <th>Quantity</th>
                     <td>
-                        <input size="2" type="number" value={product.amount} onChange={(e) => context.onChange(product.id, e)} />
+                        <input size="2" type="number" min="0" value={product.amount} onChange={(e) => context.onChange(product.id, e)} />
                     </td>
 
                     <th>Subtotal</th>
                     <td>
-                        {(product.subtotal).toFixed(2)}
+                        $ {(product.subtotal).toFixed(2)}
                     </td>
                 </tr>
-            </>
+            </React.Fragment>
 
         )
     })

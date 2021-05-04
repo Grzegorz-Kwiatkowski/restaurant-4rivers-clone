@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
 import { Link } from 'react-router-dom';
 import { Parallax } from 'react-parallax';
-
 import { Info, Alink, Button, Image } from '../../Styled Components/styled-components'
 
 import carousel_hamburger_img from '../../img/home/carousel-hamurger-img.jpg'
@@ -50,7 +49,8 @@ function Home() {
         <HomeContainer>
 
             <HomeCarousel>
-                <Carousel>
+
+                <Carousel slide={false}>
 
                     <Carousel.Item interval={3000}>
                         <img
@@ -67,7 +67,7 @@ function Home() {
                                     <HomeBigButton margin="0 1rem 0 0">Order for pickup</HomeBigButton>
                                 </Alink>
                                 <Link to="/catering/order-online">
-                                    <HomeBigButton fontSize colorBeige>Order for delivery</HomeBigButton>
+                                    <HomeBigButton colorBeige>Order for delivery</HomeBigButton>
                                 </Link>
                             </HomeButtonWrapper>
 

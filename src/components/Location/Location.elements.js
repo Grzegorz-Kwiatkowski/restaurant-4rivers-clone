@@ -21,7 +21,7 @@ export const LocationHeader = styled(Header)`
     font-family:Verlag;
     font-size:1.5rem;
         @media screen and (max-width: 1024px) {
-            top: 25%;  
+            top: 30%;  
         }
 `;
 
@@ -45,9 +45,9 @@ export const LocationContent = styled(Container)`
     overflow: hidden;
    
         @media screen and (max-width: 1024px) {
-            height: 50%;
+            height: 99%;
             opacity: 1;
-            top: 40px;
+            top: -9%;
         }
 `;
 
@@ -71,8 +71,13 @@ export const LocationUnderline = styled.div`
 `;
 
 export const LocationLink = styled.a`
-    &:hover {
-        text-decoration:none;
+
+    @media screen and (max-width: 1024px) {
+        width:100%;
+        height:100%;
+        position:absolute;
+        top:0;
+        left:0;
     }
 `;
 
@@ -109,14 +114,24 @@ export const LocationContainer = styled.div`
         }
         &:hover ${LocationHeader} {
             top: 25%;
+
+            @media screen and (max-width: 1024px) {
+                top: 30%;  
+            }
         }
         &:hover ${LocationBackgroundRed} {
             opacity: 0.9;
         }
         &:hover ${LocationContent} {
-            height: 50%;
+            height: 90%;
             opacity: 1;
-            top: 75px;
+            top: 0;
+
+            @media screen and (max-width: 1024px) {
+                height: 99%;
+                opacity: 1;
+                top: -9%;
+            }
         }
         @media screen and (max-width: 1024px) {
             width:50%;

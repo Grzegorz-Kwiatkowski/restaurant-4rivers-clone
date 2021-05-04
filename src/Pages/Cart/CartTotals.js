@@ -8,9 +8,14 @@ import {
     CartTotalsHeader,
     CartTotalsWrapper,
     CartTotalsTable,
-    CartTotalsButton
+    CartTotalsButton,
+    CartTotalsText,
+    CartTotalsImage,
+    CartTotalsDiscount,
+    CartTotalsTotalWrapper
 } from './CartTotals.elements';
 
+import discount from '../../img/another/discount.png';
 
 
 function CartTotals() {
@@ -28,24 +33,34 @@ function CartTotals() {
                 </CartTotalsHeader>
 
                 <CartTotalsTable>
-                    <tr>
-                        <th>Subtotal</th>
-                        <td>$ {context.subtotal.toFixed(2)}</td>
-                    </tr>
-                    <tr>
-                        <th>Shipping</th>
-                        <td>
-                            {/* <DeliveryOptions /> */}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Tax</th>
-                        <td>$ {context.tax}</td>
-                    </tr>
-                    <tr>
-                        <th>Total</th>
-                        <td>$ {context.total.toFixed(2)}</td>
-                    </tr>
+                    <tbody>
+
+
+                        <tr>
+                            <th>Subtotal</th>
+                            <td>$ {context.subtotal}</td>
+                        </tr>
+                        <tr>
+                            <th>Shipping</th>
+                            <td>USPS Priority :  ${context.delivery}</td>
+                        </tr>
+                        <tr>
+                            <th>Tax</th>
+                            <td>$ {context.tax}</td>
+                        </tr>
+                        <tr>
+                            <th>Total</th>
+                            <td>
+                                <CartTotalsTotalWrapper>
+                                    $ {context.totalPrice}
+                                    <CartTotalsDiscount isActive={context.couponActivated}>
+                                        <CartTotalsImage src={discount} />
+                                        <CartTotalsText>-5%</CartTotalsText>
+                                    </CartTotalsDiscount>
+                                </CartTotalsTotalWrapper>
+                            </td>
+                        </tr>
+                    </tbody>
                 </CartTotalsTable>
 
                 <Link to="/checkout">

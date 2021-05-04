@@ -60,9 +60,10 @@ function Shop() {
 
             <ShopProducts>
                 {foodAndSauces.map(item => <Product
+                    key={item.id}
                     id={item.id}
                     header={item.header}
-                    price={item.priceInfo}
+                    price={item.price}
                     image={Array.isArray(item.image) ? item.image[0] : item.image}
                     btnLabel="view details"
                     link={`/shop/` + changeString(item.header) + '/'} />)}
@@ -80,9 +81,10 @@ function Shop() {
 
             <ShopProducts>
                 {retail.map(item => <Product
+                    key={item.id}
                     id={item.id}
                     header={item.header}
-                    price={item.priceInfo}
+                    price={item.price}
                     image={Array.isArray(item.image) ? item.image[0] : item.image}
                     btnLabel="view details"
                     link={`/shop/` + changeString(item.header) + '/'} />)}

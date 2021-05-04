@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { Header, Container, Info, Button } from '../../Styled Components/styled-components'
 
 
@@ -20,6 +21,7 @@ export const GiftHeader = styled(Header)`
     letter-spacing:3px;
     font-family:Verlag;
     font-size:1.1rem;
+
          @media screen and (max-width: 1024px) {
            top: 25%;  
         }
@@ -34,7 +36,6 @@ export const GiftInfo = styled(Info)`
     font-weight:0;
     letter-spacing:2px;
     padding:0 1rem;
-    // 
 
     @media screen and (max-width: 1024px) {
         height:100%;
@@ -51,25 +52,33 @@ export const GiftContent = styled(Container)`
     transition-duration: 400ms;
     opacity:0;
     overflow: hidden;
-    margin:1rem 0;  
+  
+
         @media screen and (max-width: 1024px) {
-            height: 50%;
+            height: 99%;
             opacity: 1;
-            top: 7rem;
+            top: -9%;
+            padding-top:7rem;
         }
 
         @media screen and (max-width: 768px) {
-            padding:0 2rem;
+            // padding:0 2rem;
         }
 `;
 
-export const GiftLink = styled.a`
+export const GiftLink = styled(Link)`
     width:100%;
     height:100%;
 
-    &:hover {
-        text-decoration:none;
-    }
+        &:hover {
+            text-decoration:none;
+        }
+
+        @media screen and (max-width: 1024px) {
+            position:absolute;
+            top:0;
+            left:0;
+        }
 `;
 
 export const GiftButton = styled(Button)`
@@ -89,7 +98,6 @@ export const GiftContainer = styled.div`
     position: relative;
     opacity: 0.9;
     text-align: center; 
-   
 
         &:hover {
             background-size: 110% 110%;  
@@ -103,10 +111,12 @@ export const GiftContainer = styled.div`
         &:hover ${GiftContent} {
             height: 50%;
             opacity: 1;
-            top: 75px;
+            top: 6rem;
 
             @media screen and (max-width: 1024px) {
-              top:7rem;
+                height: 99%;
+                opacity: 1;
+                top: -9%;
             }
         }
         @media screen and (max-width: 768px) {
@@ -116,7 +126,6 @@ export const GiftContainer = styled.div`
         @media screen and (max-width: 768px) {
             width:100%;
             height:20rem;
-     
         }
        
 `;

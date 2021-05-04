@@ -52,6 +52,7 @@ class Accordion extends Component {
             <>
                 {children.map(child => (
                     <AccordionSection
+                        key={child.props.id}
                         isOpen={!!openSections[child.props.label]}
                         label={child.props.label}
                         onClick={onClick}

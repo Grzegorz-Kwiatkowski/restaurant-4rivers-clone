@@ -219,6 +219,7 @@ function Catering() {
       <CateringLocationWrapper>
         {location.map((item) => (
           <Location
+            key={item.id}
             id={item.id}
             header={item.name}
             address={item.address}

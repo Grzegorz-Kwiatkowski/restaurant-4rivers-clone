@@ -51,17 +51,26 @@ export const FooterLogoWrapper = styled.div`
 `;
 
 export const FooterLink = styled(Link)`
-    text-transform:${props => props.lowercase ? "lowercase" : "uppercase"};
+    text-transform:uppercase;
     transition: 500ms;
-    color:${props => props.white ? "#fff" : "#8d8d8d"};    
-    text-decoration:${props => props.underline ? "underline" : "none"};
+    color:${({ color }) => (color || "#8d8d8d")};  
+    text-decoration:${({ underline }) => (underline || "none")};
         &:hover {
-            text-decoration:${props => props.underline ? "underline" : "none"};
-            color:${props => props.white ? "#fff" : "#866535"};
+            text-decoration:${({ underline }) => (underline || "none")};
+            color:${({ color }) => (color || "#866535")};
             }
 `;
 
-export const FooterALink = styled(FooterLink)`
+export const FooterALink = styled.a`
+    text-transform:uppercase;
+    transition: 500ms;
+    color:${({ color }) => (color || "#8d8d8d")};  
+    text-decoration:${({ underline }) => (underline || "none")};
+
+        &:hover {
+                text-decoration:${({ underline }) => (underline || "none")};
+                color:${({ color }) => (color || "#866535")};
+            }
 `;
 
 export const FooterImageLogo = styled.div`
@@ -84,6 +93,7 @@ export const FooterText = styled.p`
     color: "#ffffff"; 
     font-family: "Sansita Swashed", cursive;
     font-size: 1.4rem;
+    text-transform:${({ text }) => (text)};
 `;
 
 
@@ -121,7 +131,8 @@ export const FooterList = styled.ul`
 export const FooterListItem = styled.li`
     list-style-type: none;
     
-        ${FooterLink} {
+        ${FooterLink},
+        ${FooterALink} {
             font-size:.7rem;
             font-weight:bold;
             letter-spacing:1px;
@@ -130,7 +141,8 @@ export const FooterListItem = styled.li`
             @media screen and (max-width: 480px) { 
                 margin:.2rem .5rem;
                 
-                ${FooterLink} {
+                ${FooterLink},
+                ${FooterALink} {
                     font-size:.6rem;
                 }
             }
@@ -138,7 +150,8 @@ export const FooterListItem = styled.li`
             @media screen and (max-width: 768px) { 
                 margin:.3rem .8rem;
                
-                ${FooterLink} {
+                ${FooterLink},
+                ${FooterALink} {
                     font-size:.8rem;
                 }
             }

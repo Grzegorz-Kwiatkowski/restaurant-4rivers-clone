@@ -4,14 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MainContextProvider from './Contexts/MainContextProvider';
-import 'babel-polyfill'
+import 'babel-polyfill';
 
 ReactDOM.render(
   <React.StrictMode>
     <MainContextProvider>
       <App />
     </MainContextProvider>
-
   </React.StrictMode>,
   document.getElementById('root')
 );

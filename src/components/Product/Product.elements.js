@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { Header, Container, Info, Button } from '../../Styled Components/styled-components'
 
 
@@ -21,9 +22,8 @@ export const ProductHeader = styled(Header)`
     font-family:Verlag;
     font-size:1.5rem;
    
-
-         @media screen and (max-width: 1024px) {
-           top: 25%;  
+        @media screen and (max-width: 1024px) {
+           top: 30%;  
         }
         @media screen and (max-width: 768px) {
             font-size:1.5rem;
@@ -45,42 +45,44 @@ export const ProductInfo = styled(Info)`
             border-bottom: 1px solid white;
         }
 
-    @media screen and (max-width: 1024px) {
-        height:100%;
-    }
-    @media screen and (max-width: 768px) {
-        font-size:1.3rem;
-    }
+            @media screen and (max-width: 1024px) {
+                height:100%;
+            }
+            @media screen and (max-width: 768px) {
+                font-size:1.3rem;
+            }
 `;
 
 export const ProductContent = styled(Container)`
     box-sizing:border-box;
     position: relative;
-    top:200px;
+    top:250px;
     transition-duration: 700ms;
     opacity:0;
     overflow: hidden;
-    margin:1rem 0;  
-
+    margin-top:1.5rem;
+ 
         @media screen and (max-width: 1024px) {
-            height: 50%;
+            height: 99%;
             opacity: 1;
-            top: 7rem;
-        }
-
-        @media screen and (max-width: 768px) {
-            padding:0 2rem;
-            margin:0;
+            top: -9%;
+            padding-top:8rem;
         }
 `;
 
-export const ProductLink = styled.a`
+export const ProductLink = styled(Link)`
     width:100%;
     height:100%;
 
-    &:hover {
-        text-decoration:none;
-    }
+        &:hover {
+            text-decoration:none;
+        }
+
+        @media screen and (max-width: 1024px) {
+            position:absolute;
+            top:0;
+            left:0;
+        }
 `;
 
 export const ProductButton = styled(Button)`
@@ -107,7 +109,7 @@ export const ProductContainer = styled.div`
             background-size: 110% 110%;  
         }
         &:hover ${ProductHeader} {
-            top: 25%;
+            top: 30%;
         }
         &:hover ${ProductBackgroundRed} {
             opacity: 0.7;
@@ -118,7 +120,10 @@ export const ProductContainer = styled.div`
             top: 4.8rem;
 
             @media screen and (max-width: 1024px) {
-              top:7rem;
+                height: 99%;
+                opacity: 1;
+                top: -9%;
+                padding-top:8rem;
             }
         }
     

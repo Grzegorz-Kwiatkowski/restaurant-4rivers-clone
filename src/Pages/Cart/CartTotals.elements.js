@@ -8,7 +8,7 @@ export const CartTotalsContainer = styled.div`
 `;
 
 export const CartTotalsWrapper = styled.div`
-width:50%;
+    width:50%;
 
         @media screen and (max-width: 768px) { 
                   width:100%;  
@@ -30,24 +30,24 @@ export const CartTotalsHeader = styled(Header)`
 export const CartTotalsTable = styled.table`
     width:100%;
     border:.5px solid lightgray;
-
-    tr {
-        border:.5px solid lightgray;
+    tbody {
+        tr {
+            border:.5px solid lightgray;
+        }
+        th,td {
+            font-size:.9rem;
+            width:50%;
+            padding: .2rem .5rem;
+            font-family:PatuaOne;
+    
+                @media screen and (max-width: 768px) { 
+                    font-size:1.2rem;
+                }
+        }
+        td {
+            text-align:left;
+        }
     }
-    th,td {
-        font-size:.9rem;
-        width:50%;
-        padding: .2rem .5rem;
-        font-family:PatuaOne;
-
-            @media screen and (max-width: 768px) { 
-                font-size:1.2rem;
-            }
-    }
-    td {
-        text-align:left;
-    }
-
         
 `;
 
@@ -56,4 +56,24 @@ export const CartTotalsButton = styled(Button)`
     margin-top:.8rem;
     padding:10px;
     font-size:.9rem;
+`;
+
+export const CartTotalsText = styled.small`
+    font-size:.9rem;
+    color:#F69110;
+`;
+
+export const CartTotalsImage = styled.img`
+    width:1.2rem;
+    height:1.2rem;
+    margin:0 .3rem 0 2rem;
+`;
+
+export const CartTotalsDiscount = styled.div`
+    display:${({ isActive }) => (isActive ? "flex" : "none")};
+`;
+
+export const CartTotalsTotalWrapper = styled.div`
+    display:flex;
+    align-items:center;
 `;

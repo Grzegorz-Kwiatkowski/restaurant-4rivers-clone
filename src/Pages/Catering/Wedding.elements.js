@@ -55,7 +55,7 @@ export const WeddingInfo = styled(Info)`
 `;
 
 
-export const WeddingContent = styled.p`
+export const WeddingContent = styled.article`
     font-family:PatuaOne;
     letter-spacing:1px;
     color:#000;
