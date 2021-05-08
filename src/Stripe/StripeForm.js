@@ -80,7 +80,7 @@ export const StripeForm = () => {
             try {
                 const { id } = paymentMethod;
                 const response = await axios.post(
-                    "http://localhost:8080/stripe/charge",
+                    "https://restaurant-4rivers-clone.herokuapp.com/stripe/charge",
                     {
                         amount: context.totalPrice * 100,
                         id: id,
